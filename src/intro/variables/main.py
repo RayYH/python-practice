@@ -58,7 +58,8 @@ b = False + 10
 print("a:", a)  # 5
 print("b:", b)  # 10
 
-# Python contains one special literal i.e. None. We use it to specify that the field has not been created.
+# Python contains one special literal i.e. None. We use it
+# to specify that the field has not been created.
 drink = "Available"
 food = None
 
