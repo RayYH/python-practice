@@ -34,7 +34,7 @@ x = 1 + 3.1j  # Complex Literal
 print(a, b, c, d)
 # Output: 10.51234 1.521e+22
 print(e, f)
-# (1+3.1j) 1.0 3.1
+# Output: (1+3.1j) 1.0 3.1
 print(x, x.real, x.imag)
 
 # String literals
@@ -50,6 +50,14 @@ print(char)
 print(multiline_str)
 print(unicode)
 print(raw_str)
+# Output:
+# Awesome Python!
+# C
+# This is
+# a multiline string
+# with more than one line code.
+# Ünicöde
+# raw \n string
 
 # Boolean literals
 # In Python, True represents the value as 1 and False as 0.
@@ -75,6 +83,11 @@ def _menu(arg):
 
 _menu(drink)
 _menu("not exists")
+# Output
+# Available
+# <class 'str'>
+# None
+# <class 'NoneType'>
 
 # Literal collections
 fruits = ["apple", "mango", "orange"]  # list
@@ -86,3 +99,8 @@ print(fruits)
 print(numbers)
 print(alphabets)
 print(vowels)
+# Output
+# ['apple', 'mango', 'orange']
+# (1, 2, 3)
+# {'a': 'apple', 'b': 'ball', 'c': 'cat'}
+# {'a', 'i', 'o', 'u', 'e'}
