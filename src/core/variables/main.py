@@ -9,16 +9,16 @@ print(PI)
 print(GRAVITY)
 
 # Number
-myFavoriteNumber = 0
+my_favorite_number = 0
 # String
-myFavoriteColor = "Blue"
+my_favorite_color = "Blue"
 # Assigning multiple values to multiple variables
-zero, pi, greetStr = 0, 3.14, "Hello World!"
+zero, pi, greet_string = 0, 3.14, "Hello World!"
 # Assigning the same value to multiple variables
 a = b = c = "abc"
-print(myFavoriteNumber)
-print(myFavoriteColor)
-print(zero, pi, greetStr)
+print(my_favorite_number)
+print(my_favorite_color)
+print(zero, pi, greet_string)
 print(a, b, c)
 
 # Number Literals
