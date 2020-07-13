@@ -38,7 +38,9 @@ def test_removing_elements_from_dicts():
     res = squares.pop(4)
     assert res == 16
     assert squares == {1: 1, 2: 4, 3: 9, 5: 25}
-    assert squares.popitem() == (5, 25)
+    # since 3.7 popitem() - Remove and return a (key, value) pair from the dictionary. Pairs are returned in LIFO order.
+    # before 3.7 Remove and return an arbitrary (key, value) pair from the dictionary.
+    assert squares.popitem()
     assert squares == {1: 1, 2: 4, 3: 9}
     squares.clear()
     assert len(squares) == 0
