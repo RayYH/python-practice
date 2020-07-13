@@ -1,0 +1,53 @@
+def test_create_a_string():
+    first_string = 'Hello'
+    assert first_string == first_string
+    second_string = "Hello"
+    assert first_string == second_string
+    second_string = '''Hello'''
+    assert first_string == second_string
+    # triple quotes string can extend multiple lines
+    my_string = """Hello, welcome to
+               the world of Python"""
+    assert my_string
+
+
+def test_access_characters_in_string():
+    my_str = 'some word'
+    assert my_str == my_str
+    assert my_str[0] == 's'
+    assert my_str[-1] == 'd'
+    assert my_str[1:5] == "ome "
+    assert my_str[5:-2] == "wo"
+    # Strings are immutable.
+
+
+def test_string_operations():
+    str1 = 'Hello'
+    str2 = 'World!'
+    assert str1 + ' ' + str2 == 'Hello World!'
+    assert str1 * 3 == 'HelloHelloHello'
+    assert 'Hello ''World!' == 'Hello World!'
+    s = ('Hello '
+         'World!')
+    assert s == 'Hello World!'
+
+
+def test_iterating_through_a_string():
+    # Iterating through a string
+    count = 0
+    for letter in 'Hello World':
+        if letter == 'l':
+            count += 1
+    assert count == 3
+
+
+def test_string_membership():
+    assert 'a' in 'program'
+    assert 'at1' not in 'battle'
+
+
+def test_string_functions():
+    my_str = 'cold'
+    list_enumerate = list(enumerate(my_str))
+    assert list_enumerate == [(0, 'c'), (1, 'o'), (2, 'l'), (3, 'd')]
+    assert len(my_str) == 4
