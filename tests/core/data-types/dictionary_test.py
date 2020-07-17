@@ -1,3 +1,10 @@
+"""
+1. Dictionary is an unordered collection of key-value pairs.
+2. Dictionaries are optimized for retrieving data, but we must know the key to retrieve the value.
+3. Key and value can be of any type.
+"""
+
+
 def test_creating_dicts():
     # empty dictionary
     my_dict = {}
@@ -5,6 +12,7 @@ def test_creating_dicts():
     # dictionary with integer keys
     my_dict = {1: 'apple', 2: 'ball'}
     assert len(my_dict) == 2
+    assert '{}'.format(type(my_dict)) == "<class 'dict'>"
     # dictionary with mixed keys
     my_dict = {'name': 'John', 1: [2, 4, 3]}
     assert len(my_dict) == 2

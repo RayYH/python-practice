@@ -1,3 +1,9 @@
+"""
+1. Integers can be of any length, it is only limited by the memory available.
+2. A floating-point number is accurate up to 15 decimal places.
+3. We can use the type() function to know which class a variable or a value belongs to.
+4. The isinstance() function is used to check if an object belongs to a particular class.
+"""
 from decimal import Decimal
 from fractions import Fraction
 import fractions
@@ -9,6 +15,7 @@ def test_numbers_basic():
     assert '{}'.format(type(1)) == "<class 'int'>"
     assert '{}'.format(type(1.0)) == "<class 'float'>"
     assert isinstance(1 + 2j, complex)
+    assert '{}'.format(0.1234567890123456789) == '0.12345678901234568'  # got truncated
     assert 0b1101011 == 107
     assert 0xFB + 0b10 == 253
     assert 0o15 == 13

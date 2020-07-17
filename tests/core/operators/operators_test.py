@@ -1,3 +1,36 @@
+def test_arithmetic_operators():
+    x = 15
+    y = 4
+    assert x + y == 19
+    assert x - y == 11
+    assert x * y == 60
+    # Divide left operand by the right one (always results into float)
+    assert x / y == 3.75
+    # Floor division - division that results into whole number adjusted to the left in the number line
+    assert x // y == 3
+    assert x % y == 3
+    assert x ** y == 50625
+
+
+def test_comparison_operators():
+    x = 10
+    y = 12
+    assert not x > y
+    assert x < y
+    assert not x == y
+    assert x != y
+    assert not x >= y
+    assert x <= y
+
+
+def test_logical_operators():
+    x = True
+    y = False
+    assert not (x and y)
+    assert x or y
+    assert not y
+
+
 def test_bitwise_operators():
     # 5 = 0000 0101
     a = 5

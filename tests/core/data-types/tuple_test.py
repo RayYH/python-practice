@@ -1,3 +1,9 @@
+"""
+1. Tuple is an ordered sequence of items same as a list.
+2. Tuples are immutable - which means you cannot use an assignment statement like tuple[0]=XX.
+"""
+
+
 def test_creating_a_tuple():
     # Empty tuple
     my_tuple = ()
@@ -19,6 +25,10 @@ def test_creating_a_tuple():
     assert a == 3
     assert b == 4.6
     assert c == "dog"
+    my_keywords = ("Ray", "M", 174.8, 24, "Shanghai")
+    assert '{}'.format(my_keywords) == "('Ray', 'M', 174.8, 24, 'Shanghai')"
+    assert my_keywords[0] == 'Ray'
+    assert my_keywords[1:3] == ('M', 174.8)
 
 
 def test_creating_a_tuple_with_one_element():

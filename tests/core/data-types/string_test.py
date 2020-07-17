@@ -1,3 +1,12 @@
+"""
+1. String is sequence of Unicode characters.
+2. We can use single quotes or double quotes to represent strings.
+3. Multi-line strings can be denoted using triple quotes, three of ' or ".
+4. The slicing operator [ ] can be used with strings.
+5. Strings are immutable - we cannot use an assignment statement like str[5] = 'A'.
+"""
+
+
 def test_create_a_string():
     first_string = 'Hello'
     assert first_string == first_string

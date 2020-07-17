@@ -3,7 +3,6 @@ def break_usage():
         if val == "i":
             break
         print(val)
-
     print("The end")
 
 
@@ -12,7 +11,6 @@ def continue_usage():
         if val == "i":
             continue
         print(val)
-
     print("The end")
 
 

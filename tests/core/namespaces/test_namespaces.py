@@ -9,40 +9,23 @@ then in the global namespace and finally in the built-in namespace.
 """
 
 
-def print_hello():
-    print("Hello")
+def get_greet_str():
+    return "Hello!"
 
 
-def show_ids():
+def test_everything_in_python_is_an_object():
     """
     Everything in Python is an object.
     """
     a = 2
-    print('id(2) =', id(2))
-    print('id(a) =', id(a))
+    assert id(2) == id(a)
     a = a + 1
-    print('id(a) =', id(a))
-    print('id(3) =', id(3))
+    assert id(3) == id(a)
     # the new name b gets associated with the previous object 2.
     # This is efficient as Python does not have to create a new duplicate object.
     # This dynamic nature of name binding makes Python powerful; a name could refer to any type of object.
     # Functions are objects too, so a name can refer to them as well.
-    a = print_hello
-    a()
+    a = get_greet_str
+    assert a() == "Hello!"
     b = 2
-    print('id(b) =', id(b))
-    print('id(2) =', id(2))
-    # id(2) = 4389870160
-    # id(a) = 4389870160
-    # id(a) = 4389870192
-    # id(3) = 4389870192
-    # id(b) = 4389870160
-    # id(2) = 4389870160
-
-
-def main():
-    show_ids()
-
-
-if __name__ == '__main__':
-    main()
+    assert id(b) == id(2)

@@ -1,5 +1,7 @@
-def for_loop():
-    # Program to find the sum of all numbers stored in a list
+def for_in_loop():
+    """
+    Program to find the sum of all numbers stored in a list
+    """
     # List of numbers
     numbers = [6, 5, 3, 8, 4, 2, 5, 4, 11]
     # variable to store the sum
@@ -11,9 +13,13 @@ def for_loop():
 
 
 def range_usage():
-    print(range(10))
+    # <class 'range'>
+    print(type(range(10)))
+    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     print(list(range(10)))
+    # [2, 3, 4, 5, 6, 7]
     print(list(range(2, 8)))
+    # [2, 5, 8, 11, 14, 17]
     print(list(range(2, 20, 3)))
     genre = ['pop', 'rock', 'jazz']
     # iterate over the list using index
@@ -21,10 +27,28 @@ def range_usage():
         print("I like", genre[i])
 
 
+def for_loop():
+    """
+    python does not support (i = 0; i < 10; i++) syntax
+    but you can use for-range syntax to make it
+    """
+    # (i = 0; i < 10; i++)
+    for i in range(0, 10, 1):
+        # 0 1 2 3 4 5 6 7 8 9
+        print("{} ".format(i), sep="", end="")
+    print()
+    # (i = 0; i < 10; i+=2)
+    for i in range(0, 10, 2):
+        # 0 2 4 6 8
+        print("{} ".format(i), sep="", end="")
+    print()
+
+
 def for_loop_with_else():
     digits = [0, 1, 5]
     for i in digits:
         print(i)
+    # when loop is done
     else:
         print("No items left.")
     # program to display student's marks from record
@@ -40,6 +64,7 @@ def for_loop_with_else():
 
 
 def main():
+    for_in_loop()
     for_loop()
     range_usage()
     for_loop_with_else()

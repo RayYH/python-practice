@@ -1,3 +1,9 @@
+"""
+1. Set is an unordered collection of unique items.
+2. Items in a set are not ordered, indexing has no meaning.
+"""
+
+
 def test_creating_sets():
     my_set = {1, 2, 3}
     assert len(my_set) == 3

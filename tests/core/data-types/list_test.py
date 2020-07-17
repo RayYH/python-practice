@@ -1,4 +1,12 @@
-def test_lists():
+"""
+1. List is an ordered sequence of items.
+2. All the items in a list do not need to be of the same type.
+3. We can use the slicing operator [ ] to extract an item or a range of items from a list.
+4. list[m, n] (n > m) will return list[m], list[m+1], ... , list[n-1]
+"""
+
+
+def test_lists_basic():
     # empty list
     my_list = []
     assert len(my_list) == 0
@@ -22,6 +30,14 @@ def test_lists():
     n_list = ["Happy", [2, 0, 1, 5]]
     assert n_list[0][1] == 'a'
     assert n_list[1][3] == 5
+    simple_list = ["a", 1, 3.14, 1]
+    assert '{}'.format(simple_list) == "['a', 1, 3.14, 1]"
+    cities = ["Beijing", "Tokyo", "New York", "London", "Paris"]
+    assert '{}'.format(cities) == "['Beijing', 'Tokyo', 'New York', 'London', 'Paris']"
+    assert cities[2] == 'New York'
+    assert cities[0:3] == ['Beijing', 'Tokyo', 'New York']
+    assert cities[2:] == ['New York', 'London', 'Paris']
+    assert set(simple_list) == {1, 3.14, 'a'}
 
 
 def test_slicing_list():
