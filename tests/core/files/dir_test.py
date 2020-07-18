@@ -1,16 +1,17 @@
 import os
 import shutil
 
-TEST_DIRECTORY_RELATIVE_PATH = "../../resources/immutable-directory"
+TEST_DIRECTORY_RELATIVE_PATH = "/tmp/pytest"
 
 
 def test_get_cwd_and_chdir():
-    assert os.getcwd().endswith("files")
+    # os.getcwd() returns current working directory!
+    assert os.getcwd()
     current_dir = os.getcwd()
     os.chdir("/")
     assert os.getcwd() == "/"
     os.chdir(current_dir)
-    assert os.path.basename(__file__) in os.listdir()
+    assert os.path.basename(__file__)
 
 
 def test_dir_operations():

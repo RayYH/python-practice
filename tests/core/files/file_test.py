@@ -1,16 +1,16 @@
-TEST_FILE_RELATIVE_PATH = "../../resources/test.txt"
+TEST_FILE_RELATIVE_PATH = "/tmp/pytest.txt"
 
 global file_handler
 
 
 def test_open_file():
+    # Opens a file for writing. Creates a new file if it does not exist or truncates the file if it exists.
+    f = open(TEST_FILE_RELATIVE_PATH, "w")
+    f.close()
     f = open(TEST_FILE_RELATIVE_PATH)
     f.close()
     # Opens a file for reading. (default)
     f = open(TEST_FILE_RELATIVE_PATH, "r")
-    f.close()
-    # Opens a file for writing. Creates a new file if it does not exist or truncates the file if it exists.
-    f = open(TEST_FILE_RELATIVE_PATH, "w")
     f.close()
     try:
         # Opens a file for exclusive creation. If the file already exists, the operation fails.
