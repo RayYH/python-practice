@@ -1,3 +1,9 @@
+"""
+An object has two characteristics: attributes & behavior.
+A class is a blueprint for the object.
+"""
+
+
 class Parrot:
     # class attribute
     species = "bird"

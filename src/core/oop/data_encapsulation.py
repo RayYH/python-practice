@@ -1,3 +1,8 @@
+"""
+In Python, we denote private attributes using underscore as the prefix i.e single _ or double __.
+"""
+
+
 class Computer:
 
     def __init__(self):

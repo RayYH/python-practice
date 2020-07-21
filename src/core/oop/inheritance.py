@@ -14,7 +14,7 @@ class Bird:
         print(self.name + " swim faster")
 
 
-# child class
+# child class - use SubClass(BaseClass) instead of extends keyword
 class Penguin(Bird):
     name = "Penguin"
 
@@ -34,19 +34,15 @@ class Penguin(Bird):
 
 def main():
     peggy = Penguin()
-    peggy.who_is_this()
-    peggy.swim()
-    peggy.run()
     # Bird is ready
-
     # Penguin is ready
-
+    peggy.who_is_this()
     # Penguin
     # Penguin
-
+    peggy.swim()
     # Bird
     # Penguin swim faster
-
+    peggy.run()
     # Penguin
     # Penguin run faster
 

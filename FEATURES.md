@@ -9,3 +9,4 @@
 - [x] Formatting
 - [x] Functions and scopes, namespaces
 - [x] Files: file, directory
+- [x] Object & Classes: inheritance, encapsulation, polymorphism, multiple inheritance, operator overloading
