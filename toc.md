@@ -1,4 +1,4 @@
-# FEATURES
+# ToC
 
 ## Core
 
@@ -11,3 +11,8 @@
 - [x] Files: file, directory
 - [x] Object & Classes: inheritance, encapsulation, polymorphism, multiple inheritance, operator overloading
 - [x] Iterators
+- [x] Generators
+- [x] Closures
+- [x] Decorators
+- [x] Property
+- [xg] Regex
