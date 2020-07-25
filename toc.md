@@ -15,4 +15,4 @@
 - [x] Closures
 - [x] Decorators
 - [x] Property
-- [xg] Regex
+- [x] Regex
