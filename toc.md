@@ -16,3 +16,4 @@
 - [x] Decorators
 - [x] Property
 - [x] Regex
+- [ ] Datetime
