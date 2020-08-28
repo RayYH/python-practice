@@ -36,10 +36,10 @@ def assert_callable_thing():
 Tags can be used to target (or omit) tests in the runner:
 
 # Run all three tests in this module (verbosely)
-pytest -v 10_mark_test.py
+ pytest -v tests/pytests/11_mark_test.py
 
 # Run one specific test by Node name:
-pytest -v 10_mark_test.py::test_fake_query
+pytest -v tests/pytests/11_mark_test.py::test_fake_query
 
 # Run all tests with "query" in their names
 pytest -v -k query

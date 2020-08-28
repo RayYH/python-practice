@@ -1,3 +1,7 @@
+"""
+The purpose of a test fixture is to ensure that there is a well known and fixed environment
+in which tests are run so that results are repeatable. Some people call this the test context.
+"""
 import pytest
 
 
