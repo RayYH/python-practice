@@ -18,6 +18,8 @@ def test_create_a_string():
     my_string = """Hello, welcome to
                the world of Python"""
     assert my_string
+    # raw string
+    assert r'C:\Users\Ray\Documents' == 'C:\\Users\\Ray\\Documents'
 
 
 def test_access_characters_in_string():

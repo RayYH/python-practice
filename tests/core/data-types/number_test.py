@@ -11,14 +11,32 @@ import math
 import random
 
 
-def test_numbers_basic():
+def test_check_numbers_type():
+    # use type to check variable's types
     assert '{}'.format(type(1)) == "<class 'int'>"
     assert '{}'.format(type(1.0)) == "<class 'float'>"
+    # use isinstance to check if given object is an instance of a class
     assert isinstance(1 + 2j, complex)
-    assert '{}'.format(0.1234567890123456789) == '0.12345678901234568'  # got truncated
+
+
+def test_float_point_numbers_got_truncated():
+    # got truncated
+    assert '{}'.format(0.1234567890123456789) == '0.12345678901234568'
+
+
+def test_radix_and_its_conversions():
+    # radix
     assert 0b1101011 == 107
     assert 0xFB + 0b10 == 253
     assert 0o15 == 13
+    assert '{}'.format(int(0b1101011)) == '107'
+    assert '{}'.format(bin(107)) == '0b1101011'
+    assert '{}'.format(hex(107)) == '0x6b'
+    assert '{}'.format(oct(107)) == '0o153'
+
+
+def test_operations_between_int_and_floating_numbers():
+    # operations between int and float values
     assert 1 + 2.0 == 3.0
     assert int(2.3) == 2
     assert int(-2.8) == -2
