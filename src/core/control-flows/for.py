@@ -1,3 +1,7 @@
+from src.helper.line import dash
+
+
+@dash
 def for_in_loop():
     """
     Program to find the sum of all numbers stored in a list
@@ -8,25 +12,11 @@ def for_in_loop():
     sum_num = 0
     # iterate over the list
     for val in numbers:
-        sum_num = sum_num + val
+        sum_num += val
     print("The sum is", sum_num)
 
 
-def range_usage():
-    # <class 'range'>
-    print(type(range(10)))
-    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    print(list(range(10)))
-    # [2, 3, 4, 5, 6, 7]
-    print(list(range(2, 8)))
-    # [2, 5, 8, 11, 14, 17]
-    print(list(range(2, 20, 3)))
-    genre = ['pop', 'rock', 'jazz']
-    # iterate over the list using index
-    for i in range(len(genre)):
-        print("I like", genre[i])
-
-
+@dash
 def for_loop():
     """
     python does not support (i = 0; i < 10; i++) syntax
@@ -44,6 +34,7 @@ def for_loop():
     print()
 
 
+@dash
 def for_loop_with_else():
     digits = [0, 1, 5]
     for i in digits:
@@ -54,7 +45,6 @@ def for_loop_with_else():
     # program to display student's marks from record
     student_name = 'Ray'
     marks = {'James': 90, 'Jules': 55, 'Arthur': 77}
-
     for student in marks:
         if student == student_name:
             print(marks[student])
@@ -63,11 +53,31 @@ def for_loop_with_else():
         print('No entry with that name found.')
 
 
+@dash
+def range_usage():
+    # <class 'range'>
+    print(type(range(10)))
+    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    print(list(range(10)))
+    # [2, 3, 4, 5, 6, 7]
+    print(list(range(2, 8)))
+    # [2, 5, 8, 11, 14, 17]
+    print(list(range(2, 20, 3)))
+    genre = ['pop', 'rock', 'jazz']
+    # iterate over the list using index
+    for i in range(len(genre)):
+        print("I like", genre[i])
+
+
 def main():
+    print("\nFor in loop:")
     for_in_loop()
+    print("\nFor loop:")
     for_loop()
-    range_usage()
+    print("\nFor loop with else:")
     for_loop_with_else()
+    print("\nRange usage:")
+    range_usage()
 
 
 if __name__ == '__main__':

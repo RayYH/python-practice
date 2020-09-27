@@ -1,4 +1,4 @@
-from src.helper.services import DATA_SET_A, DATA_SET_B
+from src.pytests.services import DATA_SET_A, DATA_SET_B
 
 
 def test_example():

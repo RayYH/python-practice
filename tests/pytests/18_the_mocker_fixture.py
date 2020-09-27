@@ -1,4 +1,4 @@
-from src.helper.services import count_service
+from src.pytests.services import count_service
 
 
 def test_simple_mocking(mocker):

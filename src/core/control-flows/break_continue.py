@@ -1,21 +1,26 @@
+from src.helper.line import dash
+
+
+@dash
 def break_usage():
-    for val in "string":
-        if val == "i":
+    for letter in "string":
+        if letter == "i":
             break
-        print(val)
-    print("The end")
+        print(letter)
 
 
+@dash
 def continue_usage():
-    for val in "string":
-        if val == "i":
+    for letter in "string":
+        if letter == "i":
             continue
-        print(val)
-    print("The end")
+        print(letter)
 
 
 def main():
+    print("\nBreak Usage:")
     break_usage()
+    print("\nContinue Usage:")
     continue_usage()
 
 
