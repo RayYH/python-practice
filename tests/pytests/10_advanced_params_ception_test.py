@@ -23,6 +23,5 @@ def coordinates_fixture(request, numbers_fixture):
 
 
 def test_advanced_fixture_ception(coordinates_fixture):
-    print(
-        '\nRunning test_advanced_fixture_ception with "{}"'.format(coordinates_fixture)
-    )
+    print('\nRunning test_advanced_fixture_ception with "{}"'.format(
+        coordinates_fixture))

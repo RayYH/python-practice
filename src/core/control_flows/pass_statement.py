@@ -6,7 +6,8 @@ def pass_inside_loop():
             print(val, sep="", end="")
 
 
-def empty_function(): pass
+def empty_function():
+    pass
 
 
 class EmptyClass:
@@ -14,5 +15,6 @@ class EmptyClass:
 
 
 class ClassWithEmptyMethod:
+
     def fly(self):
         pass

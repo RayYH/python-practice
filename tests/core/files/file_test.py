@@ -4,7 +4,8 @@ global file_handler
 
 
 def test_open_file():
-    # Opens a file for writing. Creates a new file if it does not exist or truncates the file if it exists.
+    # Opens a file for writing. Creates a new file if it does not exist
+    # or truncates the file if it exists.
     f = open(TEST_FILE_RELATIVE_PATH, "w")
     f.close()
     f = open(TEST_FILE_RELATIVE_PATH)
@@ -13,12 +14,14 @@ def test_open_file():
     f = open(TEST_FILE_RELATIVE_PATH, "r")
     f.close()
     try:
-        # Opens a file for exclusive creation. If the file already exists, the operation fails.
+        # Opens a file for exclusive creation.
+        # If the file already exists, the operation fails.
         open(TEST_FILE_RELATIVE_PATH, "x")
         assert False
     except FileExistsError:
         assert True
-    # Opens a file for appending at the end of the file without truncating it. Creates a new file if it does not exist.
+    # Opens a file for appending at the end of the file without truncating it.
+    # Creates a new file if it does not exist.
     f = open(TEST_FILE_RELATIVE_PATH, "a")
     f.close()
     # Opens in text mode. (default)
@@ -30,8 +33,10 @@ def test_open_file():
     # Opens a file for updating (reading and writing)
     f = open(TEST_FILE_RELATIVE_PATH, "r+b")
     f.close()
-    # Moreover, the default encoding is platform dependent. In windows, it is cp1252 but utf-8 in Linux.
-    # So, we must not also rely on the default encoding or else our code will behave differently in different platforms.
+    # Moreover, the default encoding is platform dependent.
+    # In windows, it is cp1252 but utf-8 in Linux.
+    # So, we must not also rely on the default encoding or else our code
+    # will behave differently in different platforms.
     f = open(TEST_FILE_RELATIVE_PATH, mode='r', encoding='utf-8')
     f.close()
 
@@ -39,12 +44,15 @@ def test_open_file():
 def test_safe_close_file():
     global file_handler
     try:
-        file_handler = open(TEST_FILE_RELATIVE_PATH, mode='r', encoding='utf-8')
+        file_handler = open(TEST_FILE_RELATIVE_PATH,
+                            mode='r',
+                            encoding='utf-8')
         # perform file operations
     finally:
         file_handler.close()
     # or, we can use with statement - file will be closed internally.
-    with open(TEST_FILE_RELATIVE_PATH, mode='r', encoding='utf-8') as file_handler:
+    with open(TEST_FILE_RELATIVE_PATH, mode='r',
+              encoding='utf-8') as file_handler:
         assert file_handler
 
 

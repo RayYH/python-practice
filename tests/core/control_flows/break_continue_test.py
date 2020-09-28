@@ -1,5 +1,6 @@
 from src.helper.io import captured_output, to_string
-from src.core.control_flows.break_continue_statement import break_usage, continue_usage
+from src.core.control_flows.break_continue_statement \
+    import break_usage, continue_usage
 
 
 def test_break_usage():

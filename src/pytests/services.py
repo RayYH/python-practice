@@ -24,7 +24,11 @@ def db_service(query_parameters):
 
     time.sleep(5.0)
 
-    data = [FakeRow(0, "Foo", 19.95), FakeRow(1, "Bar", 1.99), FakeRow(2, "Baz", 9.99)]
+    data = [
+        FakeRow(0, "Foo", 19.95),
+        FakeRow(1, "Bar", 1.99),
+        FakeRow(2, "Baz", 9.99)
+    ]
 
     print("(Done doing expensive database stuff)")
     return data
@@ -44,7 +48,11 @@ def count_service(query_parameters):
 DATA_SET_A = {
     "Foo": "Bar",
     "Baz": [5, 7, 11],
-    "Qux": {"A": "Boston", "B": "Python", "C": "TDD"},
+    "Qux": {
+        "A": "Boston",
+        "B": "Python",
+        "C": "TDD"
+    },
 }
 
 DATA_SET_B = DATA_SET_A
@@ -52,5 +60,9 @@ DATA_SET_B = DATA_SET_A
 DATA_SET_C = {
     "Foo": "Bar",
     "Baz": [3, 5, 7],
-    "Qux": {"A": "Boston", "B": "Python", "C": "TDD"},
+    "Qux": {
+        "A": "Boston",
+        "B": "Python",
+        "C": "TDD"
+    },
 }

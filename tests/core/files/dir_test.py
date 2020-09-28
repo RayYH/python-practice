@@ -17,9 +17,11 @@ def test_get_cwd_and_chdir():
 def test_dir_operations():
     os.mkdir(TEST_DIRECTORY_RELATIVE_PATH)
     assert len(os.listdir(TEST_DIRECTORY_RELATIVE_PATH)) == 0
-    os.rename(TEST_DIRECTORY_RELATIVE_PATH, TEST_DIRECTORY_RELATIVE_PATH + '-new')
+    os.rename(TEST_DIRECTORY_RELATIVE_PATH,
+              TEST_DIRECTORY_RELATIVE_PATH + '-new')
     assert len(os.listdir(TEST_DIRECTORY_RELATIVE_PATH + '-new')) == 0
-    os.rename(TEST_DIRECTORY_RELATIVE_PATH + '-new', TEST_DIRECTORY_RELATIVE_PATH)
+    os.rename(TEST_DIRECTORY_RELATIVE_PATH + '-new',
+              TEST_DIRECTORY_RELATIVE_PATH)
     # remove a empty directory
     os.rmdir(TEST_DIRECTORY_RELATIVE_PATH)
     os.mkdir(TEST_DIRECTORY_RELATIVE_PATH)

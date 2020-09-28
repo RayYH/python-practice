@@ -1,5 +1,6 @@
 """
-In Python, we denote private attributes using underscore as the prefix i.e single _ or double __.
+In Python, we denote private attributes using underscore as the prefix i.e
+single _ or double __.
 """
 
 

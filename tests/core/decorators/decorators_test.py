@@ -1,7 +1,8 @@
 """
 In the most basic sense, a decorator is a callable that returns a callable.
 """
-from src.core.decorators.celsius import *
+from src.core.decorators.celsius \
+    import Celsius, CelsiusWithPropertyClass, CelsiusWithGetterAndSetters
 
 
 def inc(x):

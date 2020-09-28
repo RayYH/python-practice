@@ -7,6 +7,7 @@ class Person:
 
 
 class ComplexNumber:
+
     def __init__(self, r=0, i=0):
         self.real = r
         self.imag = i
@@ -17,13 +18,15 @@ class ComplexNumber:
 
 def test_person():
     assert Person.age == 10
-    assert '{}'.format(Person.get_age).startswith("<function Person.get_age at")
+    assert '{}'.format(
+        Person.get_age).startswith("<function Person.get_age at")
     assert Person.__doc__ == "This is a person class"
     harry = Person()
     assert harry.age == 10
     # harry.get_age() translates into Person.get_age(harry)
     assert harry.get_age() == 10
-    assert '{}'.format(harry.get_age).startswith("<bound method Person.get_age of")
+    assert '{}'.format(
+        harry.get_age).startswith("<bound method Person.get_age of")
 
 
 def test_complex_number():

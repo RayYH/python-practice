@@ -1,8 +1,7 @@
 from datetime import date, time, datetime, timedelta
-import pytz
-
 
 # http://pytz.sourceforge.net/
+
 
 def test_date():
     a_date = date(2020, 7, 26)

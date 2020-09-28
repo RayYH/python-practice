@@ -13,6 +13,7 @@ def bonus_fixture():
 
 @mark.usefixtures("class_fixture")
 class TestIntermediateClass(object):
+
     @fixture(autouse=True)
     def method_fixture(self):
         print("\n(autouse method_fixture)")

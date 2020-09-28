@@ -1,7 +1,8 @@
 """
 1. List is an ordered sequence of items.
 2. All the items in a list do not need to be of the same type.
-3. We can use the slicing operator [ ] to extract an item or a range of items from a list.
+3. We can use the slicing operator [ ] to extract an item or a range of items
+   from a list.
 4. list[m, n] (n > m) will return list[m], list[m+1], ... , list[n-1]
 """
 
@@ -33,7 +34,8 @@ def test_lists_basic():
     simple_list = ["a", 1, 3.14, 1]
     assert '{}'.format(simple_list) == "['a', 1, 3.14, 1]"
     cities = ["Beijing", "Tokyo", "New York", "London", "Paris"]
-    assert '{}'.format(cities) == "['Beijing', 'Tokyo', 'New York', 'London', 'Paris']"
+    assert '{}'.format(
+        cities) == "['Beijing', 'Tokyo', 'New York', 'London', 'Paris']"
     assert cities[2] == 'New York'
     assert cities[0:3] == ['Beijing', 'Tokyo', 'New York']
     assert cities[2:] == ['New York', 'London', 'Paris']
@@ -118,8 +120,12 @@ def test_list_comprehension():
     assert pow2 == [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
     odd = [x for x in range(20) if x % 2 == 1]
     assert odd == [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
-    lists = [x + y for x in ['Python ', 'C '] for y in ['Language', 'Programming']]
-    assert lists == ['Python Language', 'Python Programming', 'C Language', 'C Programming']
+    lists = [
+        x + y for x in ['Python ', 'C '] for y in ['Language', 'Programming']
+    ]
+    assert lists == [
+        'Python Language', 'Python Programming', 'C Language', 'C Programming'
+    ]
 
 
 def test_list_other_operations():

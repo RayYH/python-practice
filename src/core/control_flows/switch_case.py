@@ -1,5 +1,6 @@
 """
-Python does not support switch-case statement, but we can use a function to make it.
+Python does not support switch-case statement,
+but we can use a function to make it.
 """
 
 

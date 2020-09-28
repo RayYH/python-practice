@@ -1,5 +1,6 @@
 """
-Polymorphism is an ability (in OOP) to use a common interface for multiple forms (data types).
+Polymorphism is an ability (in OOP) to use a common interface
+for multiple forms (data types).
 """
 
 
@@ -31,4 +32,3 @@ def flying_test(bird):
 # common interface
 def swimming_test(bird):
     return bird.swim()
-

@@ -1,4 +1,5 @@
-from src.core.control_flows.while_statement import sum_from_1_to_n, while_loop_with_else
+from src.core.control_flows.while_statement \
+    import sum_from_1_to_n, while_loop_with_else
 from src.helper.io import captured_output, to_string
 
 

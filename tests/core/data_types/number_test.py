@@ -1,8 +1,10 @@
 """
 1. Integers can be of any length, it is only limited by the memory available.
 2. A floating-point number is accurate up to 15 decimal places.
-3. We can use the type() function to know which class a variable or a value belongs to.
-4. The isinstance() function is used to check if an object belongs to a particular class.
+3. We can use the type() function to know which class a variable or a value
+   belongs to.
+4. The isinstance() function is used to check if an object belongs to a
+   particular class.
 """
 from decimal import Decimal
 from fractions import Fraction
@@ -60,7 +62,8 @@ def test_operations_between_int_and_floating_numbers():
     tax = 12.5 / 100
     price = 100.50
     assert price * tax == 12.5625
-    # In interactive mode, the last printed expression is assigned to the variable _
+    # In interactive mode
+    # the last printed expression is assigned to the variable _
     assert round(price + price * tax, 2) == 113.06
 
 

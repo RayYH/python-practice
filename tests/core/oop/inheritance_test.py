@@ -1,5 +1,6 @@
 # Demonstration of MRO
 
+
 class X:
     pass
 
@@ -26,5 +27,6 @@ class M(B, A, Z):
 
 def test_multiple_inheritance():
     # Method Resolution Order (MRO).
-    assert '{}'.format(M.mro()).replace("class ", "").replace("inheritance_test.", "") \
-           == "[<'M'>, <'B'>, <'A'>, <'X'>, <'Y'>, <'Z'>, <'object'>]"
+    assert '{}'.format(M.mro()).replace("class ", "").replace(
+        "inheritance_test.",
+        "") == "[<'M'>, <'B'>, <'A'>, <'X'>, <'Y'>, <'Z'>, <'object'>]"

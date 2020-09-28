@@ -23,6 +23,7 @@ Greater than or equal to	p1 >= p2	        p1.__ge__(p2)
 
 
 class Point:
+
     def __init__(self, x=0, y=0):
         self.x = x
         self.y = y

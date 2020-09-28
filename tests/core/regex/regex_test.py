@@ -26,7 +26,8 @@ def test_regex():
     assert len(re.findall(pattern, 'ac')) == 1
     assert len(re.findall(pattern, 'acd')) == 1
     assert len(re.findall(pattern, 'room')) == 2
-    # The caret symbol ^ is used to check if a string starts with a certain character.
+    # The caret symbol ^ is used to check if a string starts with
+    # a certain character.
     pattern = '^a'
     assert re.match(pattern, 'a')
     assert re.match(pattern, 'abc')
@@ -35,33 +36,38 @@ def test_regex():
     assert re.match(pattern, 'abc')
     assert not re.match(pattern, 'bac')
     # see https://docs.python.org/3/howto/regex.html#match-versus-search
-    # The dollar symbol $ is used to check if a string ends with a certain character.
+    # The dollar symbol $ is used to check if a string ends with
+    # a certain character.
     pattern = '.*oo$'
     assert re.match(pattern, 'foo')
     assert re.match(pattern, 'hello oo')
     assert not re.match(pattern, 'foobar')
-    # The star symbol * matches zero or more occurrences of the pattern left to it.
+    # The star symbol * matches zero or more occurrences of
+    # the pattern left to it.
     pattern = '.*ma*n'
     assert re.match(pattern, 'mn')
     assert re.match(pattern, 'man')
     assert re.match(pattern, 'maaan')
     assert re.match(pattern, 'woman')
     assert not re.match(pattern, 'main')
-    # The plus symbol + matches one or more occurrences of the pattern left to it.
+    # The plus symbol + matches one or more occurrences of
+    # the pattern left to it.
     pattern = '.*ma+n'
     assert not re.match(pattern, 'mn')
     assert re.match(pattern, 'man')
     assert re.match(pattern, 'maaan')
     assert re.match(pattern, 'woman')
     assert not re.match(pattern, 'main')
-    # The question mark symbol ? matches zero or one occurrence of the pattern left to it.
+    # The question mark symbol ? matches zero or one occurrence of
+    # the pattern left to it.
     pattern = '.*ma?n'
     assert re.match(pattern, 'mn')
     assert re.match(pattern, 'man')
     assert not re.match(pattern, 'maaan')
     assert re.match(pattern, 'woman')
     assert not re.match(pattern, 'main')
-    # Consider this code: {n,m}. This means at least n, and at most m repetitions of the pattern left to it.
+    # Consider this code: {n,m}. This means at least n, and at most
+    # m repetitions of the pattern left to it.
     pattern = 'a{2,3}'
     assert len(re.findall(pattern, 'abc dat')) == 0
     assert len(re.findall(pattern, 'abc daat')) == 1
@@ -85,7 +91,8 @@ def test_regex():
     pattern = r'\Athe'
     assert len(re.findall(pattern, 'the sun')) == 1
     assert len(re.findall(pattern, 'In the sun')) == 0
-    # \b - Matches if the specified characters are at the beginning or end of a word.
+    # \b - Matches if the specified characters are at
+    # the beginning or end of a word.
     pattern = r'\bfoo'
     assert len(re.findall(pattern, 'football')) == 1
     assert len(re.findall(pattern, 'a football')) == 1
@@ -94,7 +101,8 @@ def test_regex():
     assert len(re.findall(pattern, 'the foo')) == 1
     assert len(re.findall(pattern, 'the afoo test')) == 1
     assert len(re.findall(pattern, 'the afootest')) == 0
-    # \B - Opposite of \b. Matches if the specified characters are not at the beginning or end of a word.
+    # \B - Opposite of \b. Matches if the specified characters are
+    # not at the beginning or end of a word.
     pattern = r'\Bfoo'
     assert len(re.findall(pattern, 'football')) == 0
     assert len(re.findall(pattern, 'a football')) == 0
@@ -111,15 +119,18 @@ def test_regex():
     pattern = r'\D'
     assert len(re.findall(pattern, '1ab34"50')) == 3
     assert len(re.findall(pattern, '1345')) == 0
-    # \s - Matches where a string contains any whitespace character. Equivalent to [ \t\n\r\f\v].
+    # \s - Matches where a string contains any whitespace character.
+    # Equivalent to [ \t\n\r\f\v].
     pattern = r'\s'
     assert len(re.findall(pattern, 'Python RegEx')) == 1
     assert len(re.findall(pattern, 'PythonRegEx')) == 0
-    # \S - Matches where a string contains any non-whitespace character. Equivalent to [^ \t\n\r\f\v].
+    # \S - Matches where a string contains any non-whitespace character.
+    # Equivalent to [^ \t\n\r\f\v].
     pattern = r'\S'
     assert len(re.findall(pattern, 'a b')) == 2
     assert len(re.findall(pattern, '  ')) == 0
-    # \w - Matches any alphanumeric character (digits and alphabets). Equivalent to [a-zA-Z0-9_].
+    # \w - Matches any alphanumeric character (digits and alphabets).
+    # Equivalent to [a-zA-Z0-9_].
     pattern = r'\w'
     assert len(re.findall(pattern, '12&": ;c')) == 3
     assert len(re.findall(pattern, '%"> !)')) == 0
@@ -152,6 +163,7 @@ def test_re_methods():
     # multiline string
     string = 'abc 12\
     de 23 \n f45 6'
+
     # matches all whitespace characters
     pattern = r'\s+'
     # empty string
@@ -161,6 +173,7 @@ def test_re_methods():
     # multiline string
     string = 'abc 12\
     de 23 \n f45 6'
+
     # matches all whitespace characters
     pattern = r'\s+'
     replace = ''
@@ -169,6 +182,7 @@ def test_re_methods():
     # multiline string
     string = 'abc 12\
     de 23 \n f45 6'
+
     # matches all whitespace characters
     pattern = r'\s+'
     # empty string
@@ -187,7 +201,8 @@ def test_re_methods():
     assert match.group(1) == "801"
     assert match.group(2) == "35"
     assert match.group(1, 2) == ('801', '35')
-    # The start() function returns the index of the start of the matched substring.
+    # The start() function returns the index of the start of
+    # the matched substring.
     # Similarly, end() returns the end index of the matched substring.
     assert match.start() == 2
     assert match.end() == 8

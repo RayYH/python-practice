@@ -1,6 +1,7 @@
 """
 1. Tuple is an ordered sequence of items same as a list.
-2. Tuples are immutable - which means you cannot use an assignment statement like tuple[0]=XX.
+2. Tuples are immutable - which means you cannot use an assignment statement
+   like tuple[0]=XX.
 """
 
 
@@ -11,7 +12,7 @@ def test_creating_a_tuple():
     # tuple having integers
     my_tuple = (1, 2, 3)
     assert len(my_tuple) == 3
-    # tuple with mixed data-types
+    # tuple with mixed data_types
     my_tuple = (1, "Hello", 3.4)
     assert len(my_tuple) == 3
     # nested tuple
@@ -35,7 +36,7 @@ def test_creating_a_tuple_with_one_element():
     # my_tuple = ("hello") has the same effect
     my_tuple = "hello"
     assert '{}'.format(type(my_tuple)) == "<class 'str'>"
-    my_tuple = ("hello",)
+    my_tuple = ("hello", )
     assert '{}'.format(type(my_tuple)) == "<class 'tuple'>"
     my_tuple = "hello",
     assert '{}'.format(type(my_tuple)) == "<class 'tuple'>"
@@ -67,7 +68,7 @@ def test_changing_tuple():
     my_tuple = ('p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z')
     assert my_tuple[:] == my_tuple
     assert (1, 2, 3) + (4, 5, 6) == (1, 2, 3, 4, 5, 6)
-    assert ("Repeat",) * 3 == ('Repeat', 'Repeat', 'Repeat')
+    assert ("Repeat", ) * 3 == ('Repeat', 'Repeat', 'Repeat')
 
 
 def test_deleting_tuple():
@@ -77,12 +78,24 @@ def test_deleting_tuple():
 
 
 def test_tuple_methods():
-    my_tuple = ('a', 'p', 'p', 'l', 'e',)
+    my_tuple = (
+        'a',
+        'p',
+        'p',
+        'l',
+        'e',
+    )
     assert my_tuple.count('p') == 2
     assert my_tuple.index('l') == 3
 
 
 def test_tuple_operations():
-    my_tuple = ('a', 'p', 'p', 'l', 'e',)
+    my_tuple = (
+        'a',
+        'p',
+        'p',
+        'l',
+        'e',
+    )
     assert 'a' in my_tuple
     assert 'g' not in my_tuple

@@ -1,6 +1,8 @@
 """
-1. We can convert between different data types by using different type conversion functions like int(), str().
-2. Conversion from float to int will truncate the value (make it closer to zero).
+1. We can convert between different data types by using different type
+   conversion functions like int(), str().
+2. Conversion from float to int will truncate the value
+   (make it closer to zero).
 3. Conversion to and from string must contain compatible values.
 4. To convert to dictionary, each element must be a pair.
 """

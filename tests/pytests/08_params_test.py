@@ -31,7 +31,13 @@ def mode(request):
     yield request.param
 
 
-@pytest.fixture(params=[{"name": "Ray", "age": 23}, {"name": "Bob", "age": 24}])
+@pytest.fixture(params=[{
+    "name": "Ray",
+    "age": 23
+}, {
+    "name": "Bob",
+    "age": 24
+}])
 def user(request):
     """
     Fixtures with parameters will run once per param

@@ -24,7 +24,6 @@ def output_formatting():
     # Ray's age is 24
 
     x = 12.3456789
-    y = 1
     # use % operator
     print('The value of x is %3.2f' % x)
     print('The value of x is %3.4f' % x)

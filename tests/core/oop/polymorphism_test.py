@@ -1,4 +1,5 @@
-from src.core.oop.polymorphism import *
+from src.core.oop.polymorphism \
+    import Parrot, Penguin, flying_test, swimming_test
 
 
 def test_polymorphism():

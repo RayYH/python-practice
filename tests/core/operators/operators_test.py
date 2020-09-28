@@ -6,7 +6,8 @@ def test_arithmetic_operators():
     assert x * y == 60
     # Divide left operand by the right one (always results into float)
     assert x / y == 3.75
-    # Floor division - division that results into whole number adjusted to the left in the number line
+    # Floor division - division that results into whole number adjusted to the
+    # left in the number line
     assert x // y == 3
     assert x % y == 3
     assert x ** y == 50625
@@ -62,11 +63,13 @@ def test_bitwise_operators():
     assert a ^ b == 4 + 8
     # Complement
     # 4
-    # 0000 0100 - 原码 (正数的原码即为真值)
-    # 1111 1011 - 取反，得到的结果在计算机中存储的形式是补码，此补码指示其值是一个负数 (最高位是1)
-    # 1111 1010 - -1 (负数的补码由其原码取反 +1 而得，因此我们需要 -1 再对符号位之外的各位取反)
-    # 1000 0101 - 取反 (1 + 4)
-    #          *
+    # 0000 0100 - true code -> below is an inverse form
+    # 1111 1011 - will be treated as a 2's complement,
+    #           - this is a negative number
+    #           - so, to get the true code, minus one first
+    # 1111 1010 - then, inverse all numbers except the sign
+    # 1000 0101
+    #
     # There is a simple rule: A + (~A) = -1
     assert ~4 == -(1 + 4)
     # bit shift operators
@@ -134,14 +137,16 @@ def test_identity_operators():
     assert (x1 is y1)
     assert (x2 is y2)
     # x3 and y3 are lists. They are equal but not identical.
-    # It is because the interpreter locates them separately in memory although they are equal.
+    # It is because the interpreter locates them separately in memory
+    # although they are equal.
     assert (x3 is not y3)
 
 
 def test_membership_operators():
     # in - True if value/variable is found in the sequence
     # In a dictionary we can only test for presence of key, not the value.
-    # we can test whether a value or variable is found in a sequence (string, list, tuple, set and dictionary).
+    # we can test whether a value or variable is found in a sequence
+    # (string, list, tuple, set and dictionary).
     x = 'Hello world'
     y = {1: 'a', 2: 'b'}
     assert ('H' in x)

@@ -3,7 +3,8 @@
 2. We can use single quotes or double quotes to represent strings.
 3. Multi-line strings can be denoted using triple quotes, three of ' or ".
 4. The slicing operator [ ] can be used with strings.
-5. Strings are immutable - we cannot use an assignment statement like str[5] = 'A'.
+5. Strings are immutable - we cannot use an assignment statement like str[5]
+   = 'A'.
 """
 
 
@@ -37,9 +38,8 @@ def test_string_operations():
     str2 = 'World!'
     assert str1 + ' ' + str2 == 'Hello World!'
     assert str1 * 3 == 'HelloHelloHello'
-    assert 'Hello ''World!' == 'Hello World!'
-    s = ('Hello '
-         'World!')
+    assert 'Hello ' 'World!' == 'Hello World!'
+    s = ('Hello ' 'World!')
     assert s == 'Hello World!'
 
 

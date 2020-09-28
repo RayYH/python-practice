@@ -1,4 +1,5 @@
-from src.core.control_flows.if_statement import greater_than_3, greater_than_5, equals
+from src.core.control_flows.if_statement \
+    import greater_than_3, greater_than_5, equals
 
 
 def test_greater_than_3():

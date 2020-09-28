@@ -1,4 +1,5 @@
 def make_pretty(func):
+
     def inner():
         print("I got decorated")
         func()
@@ -12,6 +13,7 @@ def ordinary():
 
 
 def smart_divide(func):
+
     def inner(a, b):
         print("I am going to divide", a, "and", b)
         if b == 0:
@@ -29,6 +31,7 @@ def divide(a, b):
 
 
 def star(func):
+
     def inner(*args, **kwargs):
         print("*" * 30)
         func(*args, **kwargs)
@@ -38,6 +41,7 @@ def star(func):
 
 
 def percent(func):
+
     def inner(*args, **kwargs):
         print("%" * 30)
         func(*args, **kwargs)

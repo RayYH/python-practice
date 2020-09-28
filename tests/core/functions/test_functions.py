@@ -33,10 +33,7 @@ def get_greeting_strings(*names):
 def test_get_greeting_strings():
     my_lists = get_greeting_strings("Monica", "Luke", "Steve", "John")
     assert my_lists == [
-        "Hello Monica",
-        "Hello Luke",
-        "Hello Steve",
-        "Hello John"
+        "Hello Monica", "Hello Luke", "Hello Steve", "Hello John"
     ]
     assert get_greeting_strings.__doc__ == '''
     This function greets all
@@ -78,7 +75,8 @@ def test_factorial():
 
 def test_lambda_function():
     # double_value = lambda x: x * 2
-    def double_value(x): return x * 2
+    def double_value(x):
+        return x * 2
 
     assert double_value(5) == 10
     # Program to filter out only the even items from a list

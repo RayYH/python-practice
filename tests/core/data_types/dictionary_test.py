@@ -1,6 +1,7 @@
 """
 1. Dictionary is an unordered collection of key-value pairs.
-2. Dictionaries are optimized for retrieving data, but we must know the key to retrieve the value.
+2. Dictionaries are optimized for retrieving data, but we must know the key to
+   retrieve the value.
 3. Key and value can be of any type.
 """
 
@@ -46,8 +47,10 @@ def test_removing_elements_from_dicts():
     res = squares.pop(4)
     assert res == 16
     assert squares == {1: 1, 2: 4, 3: 9, 5: 25}
-    # since 3.7 popitem() - Remove and return a (key, value) pair from the dictionary. Pairs are returned in LIFO order.
-    # before 3.7 Remove and return an arbitrary (key, value) pair from the dictionary.
+    # since 3.7 popitem() - Remove and return a (key, value) pair from the
+    # dictionary. Pairs are returned in LIFO order.
+    # before 3.7 Remove and return an arbitrary (key, value)
+    # pair from the dictionary.
     assert squares.popitem()
     assert squares == {1: 1, 2: 4, 3: 9}
     squares.clear()

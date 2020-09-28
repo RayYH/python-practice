@@ -1,5 +1,6 @@
 from src.helper.io import captured_output, to_string
-from src.core.control_flows.pass_statement import empty_function, EmptyClass, ClassWithEmptyMethod, pass_inside_loop
+from src.core.control_flows.pass_statement \
+    import empty_function, EmptyClass, ClassWithEmptyMethod, pass_inside_loop
 
 
 def test_empty_function():

@@ -56,4 +56,5 @@ def test_for_loop_with_else():
                 break
         else:
             print('No entry with that name found.', end=" ")
-    assert to_string(out) == "0 1 5 No items left. No entry with that name found."
+    assert to_string(
+        out) == "0 1 5 No items left. No entry with that name found."

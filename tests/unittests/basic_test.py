@@ -2,6 +2,7 @@ import unittest
 
 
 class BasicUsage(unittest.TestCase):
+
     def test_numbers(self):
         self.assertEqual(4, 2 + 2)
         self.assertEqual(288925, 53672 + 235253)
