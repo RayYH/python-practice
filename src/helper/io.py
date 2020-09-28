@@ -13,3 +13,9 @@ def captured_output():
         yield sys.stdout, sys.stderr
     finally:
         sys.stdout, sys.stderr = old_out, old_err
+
+
+def to_string(out):
+    if hasattr(out, 'getvalue'):
+        return out.getvalue().strip()
+    return str(out)
