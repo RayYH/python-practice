@@ -15,6 +15,5 @@ class EmptyClass:
 
 
 class ClassWithEmptyMethod:
-
     def fly(self):
         pass

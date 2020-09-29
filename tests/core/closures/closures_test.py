@@ -1,5 +1,4 @@
 def make_multiplier_of(n):
-
     def multiplier(x):
         return x * n
 

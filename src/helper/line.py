@@ -2,7 +2,6 @@ NUM = 60
 
 
 def star(func):
-
     def inner(*args, **kwargs):
         print_symbol("*")
         func(*args, **kwargs)
@@ -12,7 +11,6 @@ def star(func):
 
 
 def dash(func):
-
     def inner(*args, **kwargs):
         print_symbol("-")
         func(*args, **kwargs)

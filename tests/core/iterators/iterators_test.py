@@ -11,7 +11,6 @@ class PowTwo:
     """
     Class to implement an iterator of powers of two
     """
-
     def __init__(self, max_nums=0):
         self.max_nums = max_nums
 
@@ -32,7 +31,6 @@ class InfIter:
     """
     Infinite iterator to return all odd numbers
     """
-
     def __iter__(self):
         self.num = 1
         return self

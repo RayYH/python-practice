@@ -29,12 +29,3 @@ def output_formatting():
     print('The value of x is %3.4f' % x)
     # The value of x is 12.35
     # The value of x is 12.3457
-
-
-def main():
-    print_function()
-    output_formatting()
-
-
-if __name__ == '__main__':
-    main()

@@ -9,7 +9,6 @@ def check_validity(a, b, c):
 
 
 class Polygon:
-
     def __init__(self, no_of_sides):
         self.n = no_of_sides
         # [val for _ in range(3)] returns [val, val, val]
@@ -35,27 +34,8 @@ class Triangle(Polygon):
         Polygon.__init__(self, 3)
         # you can also use `super().__init__(3)`
 
-    def find_area(self):
+    def get_area(self):
         a, b, c = self.sides
         # calculate the semi-perimeter
         s = (a + b + c) / 2
-        area = (s * (s - a) * (s - b) * (s - c)) ** 0.5
-        print('The area of the triangle is %0.2f' % area)
-
-
-def main():
-    t = Triangle()
-    t.input_sides()
-    t.display_sides()
-    t.find_area()
-    assert isinstance(t, Triangle)
-    assert isinstance(t, Polygon)
-    assert not isinstance(t, int)
-    assert isinstance(t, object)
-    assert not issubclass(Polygon, Triangle)
-    assert issubclass(Triangle, Polygon)
-    assert issubclass(bool, int)
-
-
-if __name__ == '__main__':
-    main()
+        return (s * (s - a) * (s - b) * (s - c)) ** 0.5

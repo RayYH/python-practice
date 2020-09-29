@@ -30,22 +30,3 @@ class Penguin(Bird):
     def run(self):
         print("Penguin")
         print(self.name + " run faster")
-
-
-def main():
-    peggy = Penguin()
-    # Bird is ready
-    # Penguin is ready
-    peggy.who_is_this()
-    # Penguin
-    # Penguin
-    peggy.swim()
-    # Bird
-    # Penguin swim faster
-    peggy.run()
-    # Penguin
-    # Penguin run faster
-
-
-if __name__ == '__main__':
-    main()

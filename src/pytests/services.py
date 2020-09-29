@@ -6,7 +6,6 @@ class ExpensiveClass(object):
     """
     A fake Class that takes a long time to fully initialize
     """
-
     def __init__(self):
         print("(Initializing ExpensiveClass instance...)")
         time.sleep(0.2)

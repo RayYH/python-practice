@@ -12,7 +12,6 @@ class Plant(object):
 
 
 class HAL9000(object):
-
     def __format__(self, custom_format):
         if custom_format == 'open-the-pod-bay-doors':
             return "I'm afraid I can't do that."
@@ -20,7 +19,6 @@ class HAL9000(object):
 
 
 class Data(object):
-
     def __str__(self):
         return 'str'
 
