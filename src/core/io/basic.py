@@ -4,6 +4,7 @@ def print_function():
     print(1, 2, 3, 4, sep='*')
     # 1*2*3*4
     print(1, 2, 3, 4, sep='#', end='&')
+    # new line
     print()
     # 1#2#3#4&
     print("symbol of zero is", 0)

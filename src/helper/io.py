@@ -1,6 +1,7 @@
 import sys
 from contextlib import contextmanager
 from io import StringIO
+import io
 
 
 @contextmanager
@@ -17,4 +18,12 @@ def captured_output():
 def to_string(out):
     if hasattr(out, 'getvalue'):
         return out.getvalue().strip()
-    return str(out)
+    return str(out).strip()
+
+
+def normalize(input_params):
+    return '\n'.join(str(x) for x in input_params)
+
+
+def stdin(monkeypatch, input_params):
+    monkeypatch.setattr('sys.stdin', io.StringIO(normalize(input_params)))

@@ -39,3 +39,6 @@ class Triangle(Polygon):
         # calculate the semi-perimeter
         s = (a + b + c) / 2
         return (s * (s - a) * (s - b) * (s - c)) ** 0.5
+
+    def get_circumference(self):
+        return sum(self.sides)

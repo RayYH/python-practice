@@ -21,6 +21,9 @@ def test_create_a_string():
     assert my_string
     # raw string
     assert r'C:\Users\Ray\Documents' == 'C:\\Users\\Ray\\Documents'
+    # unicode
+    my_str = '\u4E2D\u6587'
+    assert my_str == '中文'
 
 
 def test_access_characters_in_string():
@@ -39,7 +42,7 @@ def test_string_operations():
     assert str1 + ' ' + str2 == 'Hello World!'
     assert str1 * 3 == 'HelloHelloHello'
     assert 'Hello ' 'World!' == 'Hello World!'
-    s = ('Hello ' 'World!')
+    s = 'Hello ' 'World!'
     assert s == 'Hello World!'
 
 
@@ -62,3 +65,11 @@ def test_string_functions():
     list_enumerate = list(enumerate(my_str))
     assert list_enumerate == [(0, 'c'), (1, 'o'), (2, 'l'), (3, 'd')]
     assert len(my_str) == 4
+    my_str = 'Hello, world!'
+    assert len(my_str) == 13
+    assert my_str.title() == "Hello, World!"
+    assert my_str.upper() == "HELLO, WORLD!"
+    assert my_str.lower() == "hello, world!"
+    assert not my_str.isupper()
+    assert my_str.startswith("Hello")
+    assert not my_str.endswith("World")

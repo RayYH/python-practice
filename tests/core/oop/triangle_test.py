@@ -1,10 +1,12 @@
 from src.core.oop.triangle import Triangle, Polygon
-from src.helper.io import captured_output, to_string
+from src.helper.io import captured_output, to_string, stdin
 import io
 
 
+# The monkeypatch fixture helps you to safely set/delete an attribute,
+# dictionary item or environment variable, or to modify sys.path for importing.
 def test_triangle(monkeypatch):
-    monkeypatch.setattr('sys.stdin', io.StringIO('2\n3\n4'))
+    stdin(monkeypatch, [2, 3, 4])
     t = Triangle()
     t.input_sides()
     with captured_output() as (out, err):
@@ -13,6 +15,7 @@ def test_triangle(monkeypatch):
 Side 2 is 3.0
 Side 3 is 4.0'''
     assert '{:.2f}'.format(t.get_area()) == '2.90'
+    assert '{:.2f}'.format(t.get_circumference()) == '9.00'
     assert isinstance(t, Triangle)
     assert isinstance(t, Polygon)
     assert not isinstance(t, int)
@@ -20,3 +23,12 @@ Side 3 is 4.0'''
     assert not issubclass(Polygon, Triangle)
     assert issubclass(Triangle, Polygon)
     assert issubclass(bool, int)
+
+
+def test_not_valid(monkeypatch):
+    stdin(monkeypatch, [1, 1, 2])
+    try:
+        t = Triangle()
+        t.input_sides()
+    except ValueError as e:
+        assert str(e) == "your input parameters is invalid: check your inputs!"

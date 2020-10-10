@@ -30,6 +30,7 @@ def test_logical_operators():
     assert not (x and y)
     assert x or y
     assert not y
+    assert y is not True
 
 
 def test_bitwise_operators():
