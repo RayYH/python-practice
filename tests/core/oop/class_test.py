@@ -11,6 +11,10 @@ class ComplexNumber:
         self.real = r
         self.imag = i
 
+    @staticmethod
+    def init_complex_number(r, i):
+        return ComplexNumber(r=r, i=i)
+
     def get_data(self):
         return '{} + {}j'.format(self.real, self.imag)
 
@@ -44,3 +48,6 @@ def test_complex_number():
     del num2.attr
     # removes the binding between num2 & ComplexNumber class
     del num2
+    c = ComplexNumber.init_complex_number(1, 2)
+    assert c.real == 1
+    assert c.imag == 2

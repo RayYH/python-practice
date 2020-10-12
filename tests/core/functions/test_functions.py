@@ -1,3 +1,6 @@
+from src.helper.io import captured_output, to_string
+
+
 # default parameters
 def get_greeting_string(name, msg="Good morning!"):
     """
@@ -87,3 +90,68 @@ def test_lambda_function():
     my_list = [1, 5, 4, 6, 8, 11, 3, 12]
     new_list = list(map(lambda x: x * 2, my_list))
     assert new_list == [2, 10, 8, 12, 16, 22, 6, 24]
+
+
+# *args is used to send a non-keyworded variable length argument list
+def var_args(f_arg, *argv):
+    print("first normal arg:", f_arg)
+    for arg in argv:
+        print("another arg through *argv:", arg)
+
+
+def test_var_args():
+    with captured_output() as (out, err):
+        var_args('apple', 'orange', 'banana', 'peach')
+    assert to_string(out) == '''first normal arg: apple
+another arg through *argv: orange
+another arg through *argv: banana
+another arg through *argv: peach'''
+
+
+# **kwargs allows you to pass keyworded variable length of arguments
+# to a function.
+def greet_me(**kwargs):
+    for key, value in kwargs.items():
+        print("{0} = {1}".format(key, value))
+
+
+def test_greet_me():
+    with captured_output() as (out, err):
+        greet_me(name="Ray")
+    assert to_string(out) == "name = Ray"
+
+
+def args_kwargs(arg1, arg2, arg3):
+    print("arg1:", arg1)
+    print("arg2:", arg2)
+    print("arg3:", arg3)
+
+
+def test_args_kwargs():
+    args = ("two", 3, 5)
+    with captured_output() as (out, err):
+        args_kwargs(*args)
+    assert to_string(out) == '''arg1: two
+arg2: 3
+arg3: 5'''
+    kwargs = {"arg3": 3, "arg2": "two", "arg1": 5}
+    with captured_output() as (out, err):
+        args_kwargs(**kwargs)
+    assert to_string(out) == '''arg1: 5
+arg2: two
+arg3: 3'''
+
+
+def user_info(**kwargs):
+    if 'name' in kwargs:
+        return kwargs['name']
+    elif 'age' in kwargs:
+        return kwargs['age']
+    else:
+        return None
+
+
+def test_user_info():
+    assert not user_info()
+    assert user_info(age=24) == 24
+    assert user_info(name='Ray', age=24) == 'Ray'

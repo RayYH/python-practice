@@ -113,9 +113,11 @@ def test_list_methods():
     assert my_list == [0, 1, 3, 4, 6, 8, 8]
     my_list.reverse()
     assert my_list == [8, 8, 6, 4, 3, 1, 0]
+    # use ::-1 to reverse again
+    assert my_list[::-1] == [0, 1, 3, 4, 6, 8, 8]
 
 
-def test_list_comprehension():
+def test_list_generators():
     pow2 = [2 ** x for x in range(10)]
     assert pow2 == [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
     odd = [x for x in range(20) if x % 2 == 1]
