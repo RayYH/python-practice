@@ -1,4 +1,5 @@
 from src.helper.io import captured_output, to_string
+from functools import reduce
 
 
 # Enumerate() method adds a counter to an iterable and returns
@@ -27,3 +28,33 @@ def test_enumerate():
 4 l
 5 l
 6 o'''
+
+
+def multiply(x):
+    return x * x
+
+
+def add(x):
+    return x + x
+
+
+def test_map():
+    items = [1, 2, 3, 4, 5]
+    squared = list(map(lambda x: x ** 2, items))
+    assert squared == [1, 4, 9, 16, 25]
+    funcs = [multiply, add]
+    values = []
+    for i in range(5):
+        values.append(list(map(lambda x: x(i), funcs)))
+    assert values == [[0, 0], [1, 2], [4, 4], [9, 6], [16, 8]]
+
+
+def test_filter():
+    number_list = range(-5, 5)
+    less_than_zero = list(filter(lambda x: x < 0, number_list))
+    assert less_than_zero == [-5, -4, -3, -2, -1]
+
+
+def test_reduce():
+    product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
+    assert product == 24

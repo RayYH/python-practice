@@ -154,3 +154,19 @@ def test_membership_operators():
     assert ('hello' not in x)
     assert (1 in y)
     assert ('a' not in y)
+
+
+def test_ternary_operator():
+    # Ternary operators are more commonly known as conditional
+    # expressions in Python.
+    # value_if_true if condition else value_if_false
+    is_nice = True
+    state = "nice" if is_nice else "not nice"
+    assert state == 'nice'
+    # (if_test_is_false, if_test_is_true)[test]
+    nice = True
+    personality = ("mean", "nice")[nice]
+    assert personality == 'nice'
+    # ShortHand Ternary
+    assert True or "Some"
+    assert (False or "Some") == "Some"

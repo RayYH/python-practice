@@ -66,3 +66,10 @@ def test_set_operations():
     my_set = set("apple")
     assert 'a' in my_set
     assert 'z' not in my_set
+
+
+def test_remove_duplicate_items_in_list():
+    some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+    duplicates = set([x for x in some_list if some_list.count(x) > 1])
+    assert 'b' in duplicates
+    assert 'n' in duplicates

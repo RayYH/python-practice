@@ -139,3 +139,6 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+!tests/resources/c/build
+!tests/resources/c/add.so

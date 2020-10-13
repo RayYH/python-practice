@@ -1,6 +1,17 @@
 from src.helper.io import captured_output, to_string
 from src.core.decorators.decorators import \
-    ordinary, divide, printer
+    ordinary, divide, printer, a_function_requiring_decoration
+
+
+def test_basic():
+    assert a_function_requiring_decoration.__name__ == \
+           'a_function_requiring_decoration'
+    with captured_output() as (out, err):
+        a_function_requiring_decoration()
+    assert to_string(out) == \
+           '''I am doing some boring work before executing a_func()
+I am the function which needs some decoration to remove my foul smell
+I am doing some boring work after executing a_func()'''
 
 
 def test_ordinary():

@@ -81,7 +81,13 @@ def test_pass_two():
 
 
 def test_infinite_iterators():
+    # int(x=0, base=10)
+    # x - Number or string to be converted to integer object.
+    # The default argument is zero.
+    # base - Base of the number in x, Can be 0 (code literal) or 2-36.
     assert int() == 0
+    # int() always returns 0
+    # Therefore, iter(int, 1) is an infinite iterator.
     inf = iter(int, 1)
     assert inf.__next__() == 0
     assert next(inf) == 0
