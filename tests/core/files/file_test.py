@@ -1,8 +1,12 @@
+import io
+from src.helper.path import get_test_resources_dir
+
 TEST_FILE_RELATIVE_PATH = "/tmp/pytest.txt"
 
 global file_handler
 
 
+# see https://book.pythontips.com/en/latest/open_function.html
 def test_open_file():
     # Opens a file for writing. Creates a new file if it does not exist
     # or truncates the file if it exists.
@@ -85,3 +89,21 @@ def test_writing_and_reading_file():
     # truncate file contents
     with open(TEST_FILE_RELATIVE_PATH, mode="w", encoding="utf-8") as f:
         f.close()
+
+
+def test_jpg_files():
+    photo_path = get_test_resources_dir() + '/files/python.jpg'
+    summary_path = get_test_resources_dir() + '/files/summary.txt'
+    with open(photo_path, 'rb') as in_f:
+        jpg_data = in_f.read()
+
+    if jpg_data.startswith(b'\xff\xd8'):
+        text = u'This is a JPEG file (%d bytes long)\n'
+    else:
+        text = u'This is a random file (%d bytes long)\n'
+
+    with io.open(summary_path, 'w', encoding='utf-8') as out_f:
+        out_f.write(text % len(jpg_data))
+
+    with open(summary_path, mode="r", encoding="utf-8") as f:
+        assert f.read() == 'This is a JPEG file (39954 bytes long)\n'

@@ -1,5 +1,5 @@
 from src.helper.io import captured_output, to_string
-from functools import reduce
+from functools import reduce, lru_cache
 
 
 # Enumerate() method adds a counter to an iterable and returns
@@ -58,3 +58,20 @@ def test_filter():
 def test_reduce():
     product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
     assert product == 24
+
+
+@lru_cache(maxsize=32)
+def fib(n):
+    if n < 2:
+        return n
+    return fib(n - 1) + fib(n - 2)
+
+
+# Function caching allows us to cache the return values of a function depending
+# on the arguments. It can save time when an I/O bound function is periodically
+# called with the same arguments.
+def test_lru_cache():
+    assert [fib(n) for n in range(10)] == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+    # un-cache the return values
+    fib.cache_clear()
+    assert [fib(n) for n in range(10)] == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
