@@ -13,5 +13,7 @@ class File(object):
 
 
 def test_file():
+    with open(TEST_FILE_RELATIVE_PATH, "w") as f:
+        assert f
     with File(TEST_FILE_RELATIVE_PATH, mode='r') as file_handler:
         assert file_handler
