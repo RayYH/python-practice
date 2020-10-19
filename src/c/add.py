@@ -1,4 +1,4 @@
-from ctypes import *
+from ctypes import CDLL, c_float
 from src.helper.path import get_test_resources_dir
 
 
