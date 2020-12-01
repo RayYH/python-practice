@@ -10,8 +10,8 @@ class Rect(object):
         return self.__width * self.__height
 
     def __str__(self):
-        return '<Rect [width: {:.2f}, height: {:.2f}]>'.format(self.__width,
-                                                               self.__height)
+        return '<Rect [width: {:.2f}, height: {:.2f}]>'.format(
+            self.__width, self.__height)
 
     def __del__(self):
         print('destroyed')

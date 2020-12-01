@@ -15,8 +15,9 @@ def get_solutions():
 
 def main():
     for solution in get_solutions():
-        print('鸡翁: {:2d}, 鸡母: {:2d}, 鸡鶵: {:2d}'
-              .format(solution['5'], solution['3'], solution['1']))
+        print('鸡翁: {:2d}, 鸡母: {:2d}, 鸡鶵: {:2d}'.format(solution['5'],
+                                                       solution['3'],
+                                                       solution['1']))
 
 
 if __name__ == '__main__':

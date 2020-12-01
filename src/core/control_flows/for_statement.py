@@ -43,7 +43,4 @@ def get_gcd_and_lcm(a, b):
         if x % factor == 0 and y % factor == 0:
             gcd, lcm = factor, x * y // factor
             break
-    return {
-        'gcd': gcd,
-        'lcm': lcm
-    }
+    return {'gcd': gcd, 'lcm': lcm}

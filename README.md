@@ -2,6 +2,10 @@
 
 Just some python code, **USE AT YOUR OWN RISK.**
 
+## Prerequisite
+
+Python version >= `3.9`.
+
 ## Scripts
 
 ```bash

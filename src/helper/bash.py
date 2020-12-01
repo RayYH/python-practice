@@ -3,7 +3,8 @@ import subprocess
 
 def run_bash(bash_command):
     try:
-        process = subprocess.Popen(bash_command.split(), stdout=subprocess.PIPE)
+        process = subprocess.Popen(bash_command.split(),
+                                   stdout=subprocess.PIPE)
         output, error = process.communicate()
         if output:
             output = output.decode('utf8').strip()
