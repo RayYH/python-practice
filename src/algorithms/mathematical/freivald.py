@@ -3,7 +3,7 @@ Generate an n × 1 random 0/1 vector r.
 Compute P = A × (Br) – Cr.
 Return true if P = ( 0, 0, …, 0 )^T, return false otherwise.
 """
-import random
+from random import randint
 
 
 def multi(m, v):
@@ -14,7 +14,8 @@ def multi(m, v):
 def freivald(a, b, c):
     n = len(a)
     # generate random vector
-    r = [random.randint(0, 1000000) for _ in range(n)]
+    r = [randint(0, 1000000) for _ in range(n)]
+    # abr=cr means ab=c
     return multi(a, multi(b, r)) == multi(c, r)
 
 

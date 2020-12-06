@@ -23,6 +23,7 @@ flake8
 pip3 install yapf
 yapf -ir .
 ```
+
 ## License
 
-This project is open-sourced software licensed under the [MIT License](LICENSE).
+This project is open-sourced software licensed under the [MIT license](LICENSE).
