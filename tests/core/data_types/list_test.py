@@ -56,6 +56,17 @@ def test_slicing_list():
     assert my_list[:] == my_list
 
 
+def test_copy_list():
+    a = [1, 2, 3]
+    b = a
+    b[0] = 4
+    assert a == [4, 2, 3]
+    c = a[:]
+    c[0] = 5
+    assert a == [4, 2, 3]
+    assert c == [5, 2, 3]
+
+
 def test_modify_list():
     # Correcting mistake values in a list
     odd = [2, 4, 6, 8]
