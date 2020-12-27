@@ -4,12 +4,13 @@ def test_arithmetic_operators():
     assert x + y == 19
     assert x - y == 11
     assert x * y == 60
-    # Divide left operand by the right one (always results into float)
+    # division always returns a floating point number
     assert x / y == 3.75
-    # Floor division - division that results into whole number adjusted to the
-    # left in the number line
+    # floor division discards the fractional part
     assert x // y == 3
+    # the % operator returns the remainder of the division
     assert x % y == 3
+    # y to the power pf x
     assert x ** y == 50625
 
 
