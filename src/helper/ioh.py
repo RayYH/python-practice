@@ -1,7 +1,6 @@
 import sys
 from contextlib import contextmanager
 from io import StringIO
-import io
 
 
 @contextmanager
@@ -26,4 +25,4 @@ def normalize(input_params):
 
 
 def stdin(monkeypatch, input_params):
-    monkeypatch.setattr('sys.stdin', io.StringIO(normalize(input_params)))
+    monkeypatch.setattr('sys.stdin', StringIO(normalize(input_params)))

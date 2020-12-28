@@ -1,6 +1,6 @@
 from src.core.control_flows.while_statement \
-    import sum_from_1_to_n, while_loop_with_else
-from src.helper.io import captured_output, to_string
+    import sum_from_1_to_n, while_loop_with_else, fibonacci_series
+from src.helper.ioh import captured_output, to_string
 
 
 def test_sum_from_1_to_n():
@@ -12,3 +12,9 @@ def test_while_loop_with_else():
     with captured_output() as (out, err):
         while_loop_with_else()
     assert to_string(out) == "Inside loop " * 3 + "Inside else"
+
+
+def test_fibonacci_series():
+    with captured_output() as (out, err):
+        fibonacci_series()
+    assert to_string(out) == "0 1 1 2 3 5 8"

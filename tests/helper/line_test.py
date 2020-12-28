@@ -1,5 +1,5 @@
 from src.helper.line import star, dash, NUM
-from src.helper.io import captured_output
+from src.helper.ioh import captured_output
 
 
 @star

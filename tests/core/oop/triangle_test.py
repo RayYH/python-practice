@@ -1,5 +1,5 @@
 from src.core.oop.triangle import Triangle, Polygon
-from src.helper.io import captured_output, to_string, stdin
+from src.helper.ioh import captured_output, to_string, stdin
 
 
 # The monkeypatch fixture helps you to safely set/delete an attribute,

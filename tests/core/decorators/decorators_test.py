@@ -1,4 +1,4 @@
-from src.helper.io import captured_output, to_string
+from src.helper.ioh import captured_output, to_string
 from src.core.decorators.decorators import \
     ordinary, divide, printer, a_function_requiring_decoration
 

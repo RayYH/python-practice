@@ -1,5 +1,5 @@
 from src.core.oop.rect import Rect
-from src.helper.io import captured_output, to_string
+from src.helper.ioh import captured_output, to_string
 
 
 def test_rect():

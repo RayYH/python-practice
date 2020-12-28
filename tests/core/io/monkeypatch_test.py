@@ -1,4 +1,4 @@
-from src.helper.io import stdin
+from src.helper.ioh import stdin
 
 
 def sum_of_two_numbers():

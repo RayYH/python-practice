@@ -15,3 +15,10 @@ def while_loop_with_else():
         counter += 1
     else:
         print("Inside else", end=" ")
+
+
+def fibonacci_series(n=10):
+    a, b = 0, 1
+    while a < n:
+        print(a, end="") if a == n - 1 else print(a, end=" ")
+        a, b = b, a + b
