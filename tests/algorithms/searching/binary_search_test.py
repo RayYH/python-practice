@@ -1,5 +1,5 @@
 from src.algorithms.sorting.helper import is_sorted
-from src.algorithms.search.binary_search import binary_search
+from src.algorithms.searching.binary_search import binary_search
 
 
 def test_binary_search():
