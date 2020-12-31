@@ -4,7 +4,7 @@ Just some python code, **USE AT YOUR OWN RISK.**
 
 ## Prerequisite
 
-Python version >= `3.9`.
+Python version >= `3.6`.
 
 ## Scripts
 
