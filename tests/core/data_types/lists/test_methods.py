@@ -79,26 +79,39 @@ def test_count():
 
 
 def test_sort():
-    fruits = ['banana', 'apple', 'kiwi', 'banana', 'pear', 'apple', 'orange',
-              'grape']
+    fruits = [
+        'banana', 'apple', 'kiwi', 'banana', 'pear', 'apple', 'orange', 'grape'
+    ]
     assert fruits
     fruits.sort()
-    assert fruits == ['apple', 'apple', 'banana', 'banana', 'grape', 'kiwi',
-                      'orange', 'pear']
+    assert fruits == [
+        'apple', 'apple', 'banana', 'banana', 'grape', 'kiwi', 'orange', 'pear'
+    ]
     fruits.sort(reverse=True)
-    assert fruits == ['pear', 'orange', 'kiwi', 'grape', 'banana', 'banana',
-                      'apple', 'apple']
-    users = [
-        {'name': 'Bob', 'age': 32},
-        {'name': 'Ray', 'age': 24},
-        {'name': "Mary", 'age': 12}
+    assert fruits == [
+        'pear', 'orange', 'kiwi', 'grape', 'banana', 'banana', 'apple', 'apple'
     ]
+    users = [{
+        'name': 'Bob',
+        'age': 32
+    }, {
+        'name': 'Ray',
+        'age': 24
+    }, {
+        'name': "Mary",
+        'age': 12
+    }]
     users.sort(key=lambda x: x['name'])
-    assert users == [
-        {'age': 32, 'name': 'Bob'},
-        {'age': 12, 'name': 'Mary'},
-        {'age': 24, 'name': 'Ray'}
-    ]
+    assert users == [{
+        'age': 32,
+        'name': 'Bob'
+    }, {
+        'age': 12,
+        'name': 'Mary'
+    }, {
+        'age': 24,
+        'name': 'Ray'
+    }]
     assert sorted("This is a test string from Andrew".split(), key=str.lower) \
            == ['a', 'Andrew', 'from', 'is', 'string', 'test', 'This']
 

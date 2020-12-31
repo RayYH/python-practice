@@ -9,4 +9,5 @@ def test_transpose_matrix():
         transposed.append([row[i] for row in matrix])
     assert [[row[i] for row in matrix] for i in range(4)] == transposed
     assert transposed == [[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
-    assert list(zip(*matrix)) == [(1, 5, 9), (2, 6, 10), (3, 7, 11), (4, 8, 12)]
+    assert list(zip(*matrix)) == [(1, 5, 9), (2, 6, 10), (3, 7, 11),
+                                  (4, 8, 12)]
