@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 print("Busy-wait for keyboard interrupt (Ctrl+C)")
 
 
