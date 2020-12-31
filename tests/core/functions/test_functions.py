@@ -96,3 +96,26 @@ arg3: 5'''
     assert to_string(out) == '''arg1: 5
 arg2: two
 arg3: 3'''
+
+
+def test_arbitrary_arguments():
+    def concat(*args, sep='/'):
+        return sep.join(args)
+
+    assert concat("earth", "mars", "venus") == 'earth/mars/venus'
+    assert concat("earth", "mars", "venus", sep=".") == 'earth.mars.venus'
+
+
+def test_unpacking_argument_lists():
+    # normal call with separate arguments
+    assert list(range(3, 6)) == [3, 4, 5]
+    # call with arguments unpacked from a list
+    assert list(range(*[3, 6])) == [3, 4, 5]
+
+    def user(name, language='Chinese', number=1):
+        return name + ' speaks ' + \
+               language + ', his favorite number is ' + \
+               str(number)
+
+    u = {'name': 'Ray', 'language': 'English', "number": 0}
+    assert user(**u) == "Ray speaks English, his favorite number is 0"
