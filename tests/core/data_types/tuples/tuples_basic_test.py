@@ -11,7 +11,7 @@ def test_modify_tuple():
 
 
 def test_repeat_tuple():
-    assert ("Repeat",) * 3 == ('Repeat', 'Repeat', 'Repeat')
+    assert ("Repeat", ) * 3 == ('Repeat', 'Repeat', 'Repeat')
 
 
 def test_accessing_tuple_elements():

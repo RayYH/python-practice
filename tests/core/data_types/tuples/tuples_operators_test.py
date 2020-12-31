@@ -5,6 +5,6 @@ def test_in_operator():
 
 
 def test_plus_operator():
-    tuple1 = ('a',)
-    tuple2 = ('b',)
+    tuple1 = ('a', )
+    tuple2 = ('b', )
     assert tuple1 + tuple2 == ('a', 'b')
