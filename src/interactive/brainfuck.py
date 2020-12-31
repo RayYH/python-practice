@@ -94,8 +94,10 @@ def evaluate(commands):
 
 
 def normalize(commands):
-    return [command for command in commands if
-            command in ['.', ',', '[', ']', '<', '>', '+', '-']]
+    return [
+        command for command in commands
+        if command in ['.', ',', '[', ']', '<', '>', '+', '-']
+    ]
 
 
 def run(scripts):
