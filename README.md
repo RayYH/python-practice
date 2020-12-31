@@ -1,6 +1,6 @@
 # Python Practice
 
-Just some python code, **USE AT YOUR OWN RISK.**
+Some code written in Python which maybe buggy and terrible, **USE AT YOUR OWN RISK.**
 
 ## Prerequisite
 
