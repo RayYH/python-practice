@@ -22,6 +22,7 @@ def evaluate(commands):
     cells = [0 * 30000]
     data_ptr = 0
     instruction_ptr = 0
+    length = len(commands)
 
     # increment the data pointer (to point to the next cell to the right).
     def greater_than_symbol():
@@ -86,7 +87,7 @@ def evaluate(commands):
         ']': right_bracket,
     }
 
-    while instruction_ptr < len(commands):
+    while instruction_ptr < length:
         command = commands[instruction_ptr]
         handlers[command]()
         instruction_ptr += 1
@@ -111,9 +112,16 @@ def build_brace_map(code):
         if command == "[":
             stack.append(position)
         if command == "]":
-            start = stack.pop()
-            brace_map[start] = position
-            brace_map[position] = start
+            if len(stack) > 0:
+                start = stack.pop()
+                brace_map[start] = position
+                brace_map[position] = start
+            else:
+                print("Error: missing [\n")
+                sys.exit(1)
+    if len(stack) > 0:
+        print("Error: missing ]\n")
+        sys.exit(1)
     return brace_map
 
 
