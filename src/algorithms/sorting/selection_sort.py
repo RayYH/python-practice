@@ -1,3 +1,6 @@
+from src.algorithms.sorting.helper import prompt
+
+
 def selection_sort(collection):
     for j in range(0, len(collection) - 1):
         smallest = j
@@ -9,11 +12,5 @@ def selection_sort(collection):
     return collection
 
 
-def main():
-    user_input = input("Enter numbers separated by a comma(,):\n").strip()
-    unsorted = [int(item) for item in user_input.split(",")]
-    print(selection_sort(unsorted))
-
-
 if __name__ == '__main__':
-    main()
+    prompt(selection_sort)

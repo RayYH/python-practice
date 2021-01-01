@@ -1,3 +1,6 @@
+from src.algorithms.sorting.helper import prompt
+
+
 def quick_sort(collection):
     length = len(collection)
     if length <= 1:
@@ -13,11 +16,5 @@ def quick_sort(collection):
         return quick_sort(lesser) + [pivot] + quick_sort(greater)
 
 
-def main():
-    user_input = input("Enter numbers separated by a comma(,):\n").strip()
-    unsorted = [int(item) for item in user_input.split(",")]
-    print(quick_sort(unsorted))
-
-
 if __name__ == '__main__':
-    main()
+    prompt(quick_sort)

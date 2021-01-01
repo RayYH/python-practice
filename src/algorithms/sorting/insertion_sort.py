@@ -1,3 +1,6 @@
+from src.algorithms.sorting.helper import prompt
+
+
 def insertion_sort(collection):
     length = len(collection)
     if length >= 1:
@@ -11,11 +14,5 @@ def insertion_sort(collection):
     return collection
 
 
-def main():
-    user_input = input("Enter numbers separated by a comma(,):\n").strip()
-    unsorted = [int(item) for item in user_input.split(",")]
-    print(insertion_sort(unsorted))
-
-
 if __name__ == '__main__':
-    main()
+    prompt(insertion_sort)
