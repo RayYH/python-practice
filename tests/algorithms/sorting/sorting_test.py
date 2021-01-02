@@ -2,7 +2,8 @@ import pytest
 from src.algorithms.sorting.helper import is_sorted
 from src.algorithms.sorting.quick_sort import quick_sort
 from src.algorithms.sorting.selection_sort import selection_sort
-from src.algorithms.sorting.insertion_sort import insertion_sort
+from src.algorithms.sorting.insertion_sort import insertion_sort, \
+    recursive_insertion_sort
 from src.algorithms.sorting.merge_sort import merge_sort
 
 
@@ -16,6 +17,10 @@ def test_selection_sort(unsorted):
 
 def test_insertion_sort(unsorted):
     assert is_sorted(insertion_sort(unsorted))
+
+
+def test_recursive_insertion_sort(unsorted):
+    assert is_sorted(recursive_insertion_sort(unsorted, len(unsorted)))
 
 
 def test_merge_sort(unsorted):
