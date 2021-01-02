@@ -33,5 +33,39 @@ def insertion_sort(collection):
     return collection
 
 
+def insertion_sort_scanning_via_binary_search(collection):
+    length = len(collection)
+    if length >= 1:
+        for j in range(1, length):
+            # collection[:j] is sorted
+            # we need to find correct index k make sure
+            # collection[k] <= collection[j] <= collection[k+1]
+            current_value = collection[j]
+            low = 0
+            high = j - 1
+            while low <= high:
+                mid = (low + high) // 2
+                if collection[mid] > current_value:
+                    high = mid - 1
+                else:
+                    low = mid + 1
+
+            # boundary check
+            if low > j - 1:
+                pos = (low + high - 1) // 2
+            elif high < 0:
+                pos = (low + high + 1) // 2
+            else:
+                pos = (low + high) // 2
+
+            # pos is the location of current_value,
+            # loop from pos+1 to j
+            for k in range(pos + 1, j):
+                collection[j] = collection[j - 1]
+            collection[pos] = current_value
+
+    return collection
+
+
 if __name__ == '__main__':
     prompt(insertion_sort)
