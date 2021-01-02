@@ -5,6 +5,7 @@ from src.algorithms.sorting.selection_sort import selection_sort
 from src.algorithms.sorting.insertion_sort import insertion_sort, \
     recursive_insertion_sort, insertion_sort_scanning_via_binary_search
 from src.algorithms.sorting.merge_sort import merge_sort
+from src.algorithms.sorting.bubble_sort import bubble_sort
 
 
 def test_quick_sort(unsorted):
@@ -25,6 +26,10 @@ def test_recursive_insertion_sort(unsorted):
 
 def test_insertion_sort_scanning_via_binary_search(unsorted):
     assert is_sorted(insertion_sort_scanning_via_binary_search(unsorted))
+
+
+def test_bubble_sort(unsorted):
+    assert is_sorted(bubble_sort(unsorted))
 
 
 def test_merge_sort(unsorted):
