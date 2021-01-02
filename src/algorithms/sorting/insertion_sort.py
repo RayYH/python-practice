@@ -4,7 +4,7 @@ from src.algorithms.sorting.helper import prompt
 def recursive_insertion_sort(collection, n):
     # base case
     if n <= 1:
-        return
+        return collection
 
     # recursion call
     recursive_insertion_sort(collection, n - 1)
@@ -38,7 +38,7 @@ def insertion_sort_scanning_via_binary_search(collection):
     if length >= 1:
         for j in range(1, length):
             # collection[:j] is sorted
-            # we need to find correct index k make sure
+            # we need to find correct index k which ensures
             # collection[k] <= collection[j] <= collection[k+1]
             current_value = collection[j]
             low = 0
@@ -51,7 +51,7 @@ def insertion_sort_scanning_via_binary_search(collection):
                     low = mid + 1
 
             # boundary check
-            if low > j - 1:
+            if low > length - 1:
                 pos = (low + high - 1) // 2
             elif high < 0:
                 pos = (low + high + 1) // 2
@@ -60,9 +60,9 @@ def insertion_sort_scanning_via_binary_search(collection):
 
             # pos is the location of current_value,
             # loop from pos+1 to j
-            for k in range(pos + 1, j):
-                collection[j] = collection[j - 1]
-            collection[pos] = current_value
+            for k in range(j, pos + 1, -1):
+                collection[k] = collection[k - 1]
+            collection[pos + 1] = current_value
 
     return collection
 

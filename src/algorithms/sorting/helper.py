@@ -1,6 +1,13 @@
 from typing import Callable, List
 
 
+def count_equals(sorted_list: List, unsorted_list: List):
+    for v in sorted_list:
+        if sorted_list.count(v) != unsorted_list.count(v):
+            return False
+    return True
+
+
 def is_sorted(collection: List):
     return all(collection[i] <= collection[i + 1]
                for i in range(len(collection) - 1))
