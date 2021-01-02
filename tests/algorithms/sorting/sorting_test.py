@@ -31,10 +31,7 @@ def test_merge_sort(unsorted):
     assert is_sorted(merge_sort(unsorted))
 
 
-@pytest.fixture(params=[
-    [3, 2, 4],
-    [23, 11, 9, 12321, 12, 3, 1, 90, 99999],
-    ["a", "d", "e", "z", "b", "h", "z"]
-])
+@pytest.fixture(params=[[3, 2, 4], [23, 11, 9, 12321, 12, 3, 1, 90, 99999],
+                        ["a", "d", "e", "z", "b", "h", "z"]])
 def unsorted(request):
     yield request.param
