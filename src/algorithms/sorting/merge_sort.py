@@ -65,6 +65,6 @@ def merge_sort(arr):
 
 if __name__ == '__main__':
     array = [2, 3, 8, 6, 1]
-    print(merge_sort_part(array,0, len(array)))
+    print(merge_sort_part(array, 0, len(array)))
     print(array)
     prompt(merge_sort)
