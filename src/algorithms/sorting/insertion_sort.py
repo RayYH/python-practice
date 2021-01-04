@@ -58,9 +58,11 @@ def insertion_sort_scanning_via_binary_search(collection):
         for j in range(1, length):
             current_value = collection[j]
             pos = binary_search(collection, current_value, 0, j - 1)
-            collection = \
-                collection[0:pos] + [current_value] \
-                + collection[pos:j] + collection[j:]
+            i = j - 1
+            while i >= 0 and i >= pos:
+                collection[i + 1] = collection[i]
+                i -= 1
+            collection[i + 1] = current_value
 
     return collection
 
