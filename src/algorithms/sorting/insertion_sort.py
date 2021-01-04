@@ -33,36 +33,34 @@ def insertion_sort(collection):
     return collection
 
 
+def binary_search(arr, val, start, end):
+    if start == end:
+        if arr[start] > val:
+            return start
+        else:
+            return start + 1
+
+    if start > end:
+        return start
+
+    mid = (start + end) // 2
+    if arr[mid] < val:
+        return binary_search(arr, val, mid + 1, end)
+    elif arr[mid] > val:
+        return binary_search(arr, val, start, mid - 1)
+    else:
+        return mid
+
+
 def insertion_sort_scanning_via_binary_search(collection):
     length = len(collection)
     if length >= 1:
         for j in range(1, length):
-            # collection[:j] is sorted
-            # we need to find correct index k which ensures
-            # collection[k] <= collection[j] <= collection[k+1]
             current_value = collection[j]
-            low = 0
-            high = j - 1
-            while low <= high:
-                mid = (low + high) // 2
-                if collection[mid] > current_value:
-                    high = mid - 1
-                else:
-                    low = mid + 1
-
-            # boundary check
-            if low > length - 1:
-                pos = (low + high - 1) // 2
-            elif high < 0:
-                pos = (low + high + 1) // 2
-            else:
-                pos = (low + high) // 2
-
-            # pos is the location of current_value,
-            # loop from pos+1 to j
-            for k in range(j, pos + 1, -1):
-                collection[k] = collection[k - 1]
-            collection[pos + 1] = current_value
+            pos = binary_search(collection, current_value, 0, j - 1)
+            collection = \
+                collection[0:pos] + [current_value] \
+                + collection[pos:j] + collection[j:]
 
     return collection
 

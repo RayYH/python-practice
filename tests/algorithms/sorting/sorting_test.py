@@ -31,9 +31,7 @@ def test_recursive_insertion_sort(unsorted):
 
 
 def test_insertion_sort_scanning_via_binary_search(unsorted):
-    # TODO bug fix
-    # sorting_assert(unsorted, insertion_sort_scanning_via_binary_search)
-    pass
+    sorting_assert(unsorted, insertion_sort_scanning_via_binary_search)
 
 
 def test_bubble_sort(unsorted):
