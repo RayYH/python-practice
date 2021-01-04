@@ -12,7 +12,7 @@ class Book:
 
 def test_in():
     assert 'a' in ['a', 'b', 'c']
-    assert 'd' not in ['a', 'b', 'c', 'd']
+    assert 'd' not in ['a', 'b', 'c']
 
 
 def test_is():
