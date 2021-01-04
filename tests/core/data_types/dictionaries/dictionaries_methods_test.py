@@ -45,11 +45,7 @@ def test_clear():
 
 
 def test_keys():
-    car = {
-        "brand": "Ford",
-        "model": "Mustang",
-        "year": 1964
-    }
+    car = {"brand": "Ford", "model": "Mustang", "year": 1964}
     dict_keys = car.keys()
     car["color"] = "white"
     assert '{}'.format(
@@ -76,21 +72,13 @@ def test_fromkeys():
 
 
 def test_popitem():
-    car = {
-        "brand": "Ford",
-        "model": "Mustang",
-        "year": 1964
-    }
+    car = {"brand": "Ford", "model": "Mustang", "year": 1964}
     assert car.popitem() == ('year', 1964)
     assert car == {'brand': 'Ford', 'model': 'Mustang'}
 
 
 def test_set_default():
-    car = {
-        "brand": "Ford",
-        "model": "Mustang",
-        "year": 1964
-    }
+    car = {"brand": "Ford", "model": "Mustang", "year": 1964}
 
     # model key exists
     assert car.setdefault("model", "Bronco") == "Mustang"
@@ -105,16 +93,20 @@ def test_set_default():
 
 
 def test_update():
-    car = {
-        "brand": "Ford",
-        "model": "Mustang",
-        "year": 1964
-    }
+    car = {"brand": "Ford", "model": "Mustang", "year": 1964}
 
     car.update({"color": "White"})
-    assert car == {'brand': 'Ford', 'model': 'Mustang', 'year': 1964,
-                   'color': 'White'}
+    assert car == {
+        'brand': 'Ford',
+        'model': 'Mustang',
+        'year': 1964,
+        'color': 'White'
+    }
 
     car.update({"color": "Black", "year": 1976})
-    assert car == {'brand': 'Ford', 'model': 'Mustang', 'year': 1976,
-                   'color': 'Black'}
+    assert car == {
+        'brand': 'Ford',
+        'model': 'Mustang',
+        'year': 1976,
+        'color': 'Black'
+    }
