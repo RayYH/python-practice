@@ -22,14 +22,8 @@ def merge(arr, p, q, r):
             arr[k] = right[j]
             j += 1
         k += 1
-    while i < left_len:
-        arr[k] = left[i]
-        i += 1
-        k += 1
-    while j < right_len:
-        arr[k] = right[j]
-        j += 1
-        k += 1
+    remain_elements = left[i:] + right[j:]
+    arr[k:r] = remain_elements
 
     return arr
 
