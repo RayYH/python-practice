@@ -8,5 +8,4 @@ def count_inversions(arr):
 
     Hint: merge sort.
     """
-    # TODO:
     pass

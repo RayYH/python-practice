@@ -40,8 +40,7 @@ def test_bubble_sort(unsorted):
 
 def test_merge_sort(unsorted):
     sorting_assert(unsorted, merge_sort)
-    # TODO bug fix
-    # sorting_assert(unsorted, merge_sort_part, 0, len(unsorted))
+    sorting_assert(unsorted, merge_sort_part, 0, len(unsorted))
 
 
 @pytest.fixture(params=[[], [1], [1, 5], [3, 3], [3, 2, 4], [2, 2, 2, 2, 2, 2],

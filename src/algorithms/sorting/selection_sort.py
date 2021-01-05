@@ -1,4 +1,4 @@
-from src.algorithms.sorting.helper import prompt
+from src.algorithms.sorting.helper import prompt, swap
 
 
 def selection_sort(collection):
@@ -7,8 +7,7 @@ def selection_sort(collection):
         for i in range(j + 1, len(collection)):
             if collection[i] < collection[smallest]:
                 smallest = i
-        collection[smallest], collection[j] = \
-            collection[j], collection[smallest]
+        swap(collection, j, smallest)
     return collection
 
 

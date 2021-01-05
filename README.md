@@ -12,7 +12,7 @@ Python version >= `3.8`, it is recommended to use the latest version of python.
 # install essential dependencies
 pip3 install -r requirements.txt
 
-# run unittests
+# run unit tests
 pytest
 
 # flake8
@@ -26,4 +26,4 @@ yapf -ir .
 
 ## License
 
-This project is open-sourced software licensed under the [MIT license](LICENSE).
+This project is open-sourced and licensed under the [MIT license](LICENSE).

@@ -18,11 +18,19 @@ def merge(arr, p, q, r):
         if left[i] < right[j]:
             arr[k] = left[i]
             i += 1
-            k += 1
         else:
             arr[k] = right[j]
             j += 1
-            k += 1
+        k += 1
+    while i < left_len:
+        arr[k] = left[i]
+        i += 1
+        k += 1
+    while j < right_len:
+        arr[k] = right[j]
+        j += 1
+        k += 1
+
     return arr
 
 
@@ -64,7 +72,4 @@ def merge_sort(arr):
 
 
 if __name__ == '__main__':
-    array = [2, 3, 8, 6, 1]
-    print(merge_sort_part(array, 0, len(array)))
-    print(array)
     prompt(merge_sort)
