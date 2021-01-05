@@ -52,6 +52,8 @@ def maximum_subarray_via_divide_and_conquer(arr):
 
 
 # dp solution
+# a maximum subarray of A[1..j+1] is either a maximum subarray
+# of A[1..j] or a subarray A[1..j+1]
 def maximum_subarray(nums):
     max_val = -sys.maxsize - 1
     res = 0
