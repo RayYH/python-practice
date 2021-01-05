@@ -65,3 +65,18 @@ def maximum_subarray(nums):
             res = 0
 
     return max_val
+
+
+# Bruce Force
+def brute_force_solution(arr):
+    max_val = -sys.maxsize - 1
+    for i in range(0, len(arr)):
+        res = arr[i]
+        current_sum = arr[i]
+        for j in range(i + 1, len(arr)):
+            current_sum += arr[j]
+            if current_sum > res:
+                res = current_sum
+        if res > max_val:
+            max_val = res
+    return max_val
