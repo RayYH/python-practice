@@ -34,15 +34,11 @@ def find_maximum_subarray(arr, low, high):
         return low, high, arr[low]
     else:
         mid = (low + high) // 2
-        left_low, left_high, left_sum = find_maximum_subarray(
-            arr, low, mid
-        )
+        left_low, left_high, left_sum = find_maximum_subarray(arr, low, mid)
         right_low, right_high, right_sum = find_maximum_subarray(
-            arr, mid + 1, high
-        )
+            arr, mid + 1, high)
         cross_low, cross_high, cross_sum = find_max_crossing_sub_array(
-            arr, low, mid, high
-        )
+            arr, low, mid, high)
         if left_sum >= right_sum and left_sum >= cross_sum:
             return left_low, left_high, left_sum
         elif right_sum >= left_sum and right_sum >= cross_sum:
