@@ -1,1 +1,4 @@
-tests/core/functions/test_function_kinds.py
+tests/core/functions/function_kinds_test.py
+__pypackages__/
+__pycache__/
+venv/
