@@ -2,7 +2,7 @@ from src.algorithms.sorting.helper import swap, prompt
 
 
 def parent(i):
-    return i // 2 - 1
+    return (i - 1) // 2
 
 
 def left(i):
