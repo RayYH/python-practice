@@ -43,10 +43,10 @@ def test_str_and_repr_methods_called_on_objects():
 
 def test_padding_and_aligning_strings():
     # align right
-    assert '%10s' % ('test',) == '      test'
+    assert '%10s' % ('test', ) == '      test'
     assert '{:>10}'.format('test') == '      test'
     # align left
-    assert '%-10s' % ('test',) == 'test      '
+    assert '%-10s' % ('test', ) == 'test      '
     assert '{:10}'.format('test') == 'test      '
     # choose the padding character
     assert '{:_<10}'.format('test') == 'test______'
@@ -61,50 +61,50 @@ def test_truncating_long_string():
     # The number behind a . in the format specifies the precision of the
     # output. For strings that means that the output is truncated to
     # the specified length.
-    assert '%.5s' % ('hello world',) == 'hello'
+    assert '%.5s' % ('hello world', ) == 'hello'
     assert '{:.5}'.format('hello world') == 'hello'
     # It is also possible to combine truncating and padding
-    assert '%-10.5s' % ('hello world',) == 'hello     '
+    assert '%-10.5s' % ('hello world', ) == 'hello     '
     assert '{:10.5}'.format('hello world') == 'hello     '
 
 
 def test_numbers():
     # decimal
-    assert '%d' % (42,) == '42'
+    assert '%d' % (42, ) == '42'
     assert '{:d}'.format(42) == '42'
     # float
-    assert '%f' % (3.141592653589793,) == "3.141593"
+    assert '%f' % (3.141592653589793, ) == "3.141593"
     assert '{:f}'.format(3.141592653589793) == "3.141593"
     # float with precision
-    assert '%.2f' % (3.141592653589793,) == "3.14"
+    assert '%.2f' % (3.141592653589793, ) == "3.14"
     assert '{:.2f}'.format(3.141592653589793) == "3.14"
 
 
 def test_padding_numbers():
     # padding with blank character
-    assert '%4d' % (42,) == "  42"
+    assert '%4d' % (42, ) == "  42"
     assert '{:4d}'.format(42) == "  42"
     # padding with 0
-    assert '%06.2f' % (3.141592653589793,) == "003.14"
+    assert '%06.2f' % (3.141592653589793, ) == "003.14"
     assert '{:06.2f}'.format(3.141592653589793) == "003.14"
-    assert '%04d' % (42,) == "0042"
+    assert '%04d' % (42, ) == "0042"
     assert '{:04d}'.format(42) == "0042"
 
 
 def test_signed_numbers():
     # by default only negative numbers are prefixed with a sign
     assert '%d' % (-23) == "-23"
-    assert '%d' % (42,) == "42"
+    assert '%d' % (42, ) == "42"
     assert '{:d}'.format(-23) == "-23"
     assert '{:d}'.format(42) == "42"
     # positive numbers prefixed with a + sign
-    assert '%+d' % (42,) == "+42"
+    assert '%+d' % (42, ) == "+42"
     assert '{:+d}'.format(42) == "+42"
     # negative numbers prefixed with a - sign
     # positive numbers prefixed with a leading space
-    assert '% d' % ((-23),) == "-23"
-    assert '% d' % (42,) == " 42"
-    assert '% d' % (+42,) == " 42"
+    assert '% d' % ((-23), ) == "-23"
+    assert '% d' % (42, ) == " 42"
+    assert '% d' % (+42, ) == " 42"
     assert '{: d}'.format((-23)) == "-23"
     assert '{: d}'.format(42) == " 42"
     assert '{: d}'.format(+42) == " 42"
