@@ -6,6 +6,7 @@ from src.algorithms.sorting.insertion_sort import insertion_sort, \
     recursive_insertion_sort, insertion_sort_scanning_via_binary_search
 from src.algorithms.sorting.merge_sort import merge_sort, merge_sort_part
 from src.algorithms.sorting.bubble_sort import bubble_sort
+from src.algorithms.sorting.heap_sort import heap_sort
 
 
 def sorting_assert(arr, algorithm, *args):
@@ -36,6 +37,10 @@ def test_insertion_sort_scanning_via_binary_search(unsorted):
 
 def test_bubble_sort(unsorted):
     sorting_assert(unsorted, bubble_sort)
+
+
+def test_heap_sort(unsorted):
+    sorting_assert(unsorted, heap_sort)
 
 
 def test_merge_sort(unsorted):
