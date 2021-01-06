@@ -1,3 +1,6 @@
+"""
+https://leetcode.com/problems/two-sum/
+"""
 from typing import List
 from src.algorithms.sorting.merge_sort import merge_sort
 

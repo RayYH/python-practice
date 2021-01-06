@@ -1,4 +1,4 @@
-from src.algorithms.leetcode.two_sum import two_sum, exists
+from src.algorithms.misc.two_sum import two_sum, exists
 
 
 def test_two_sum():
