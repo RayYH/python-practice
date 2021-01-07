@@ -29,12 +29,10 @@ def merge(arr, p, q, r):
 
 
 def merge_sort_part(arr, p, r):
-    # wht not p < r? since, we use q instead of q+1
-    # p = q = 0, r = 1
     if p < r - 1:
         q = (p + r) // 2
-        merge_sort_part(arr, p, q)  # arr[p:q] is sorted
-        merge_sort_part(arr, q, r)  # arr[q:r] is sorted
+        merge_sort_part(arr, p, q)
+        merge_sort_part(arr, q, r)
         merge(arr, p, q, r)
     return arr
 

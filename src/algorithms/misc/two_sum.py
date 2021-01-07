@@ -1,8 +1,4 @@
-"""
-https://leetcode.com/problems/two-sum/
-"""
 from typing import List
-from src.algorithms.sorting.merge_sort import merge_sort
 
 
 # Introduction to Algorithms (3th) 2.3-7
@@ -11,8 +7,8 @@ def exists(nums: List[int], target: int) -> bool:
     if len(nums) < 2:
         return False
 
-    # sort first - using n lgn time algorithm
-    nums = merge_sort(nums)
+    # sort first
+    nums.sort()
 
     # using two pointers
     low = 0
@@ -28,8 +24,18 @@ def exists(nums: List[int], target: int) -> bool:
     return False
 
 
-# https://leetcode.com/problems/two-sum/
 def two_sum(nums: List[int], target: int) -> List[int]:
+    """
+    https://leetcode.com/problems/two-sum/
+
+    Given an array of integers nums and an integer target, return indices of
+    the two numbers such that they add up to target.
+
+    You may assume that each input would have exactly one solution, and you
+    may not use the same element twice.
+
+    You can return the answer in any order.
+    """
     container = {}
     for i, num in enumerate(nums):
         complement = target - num

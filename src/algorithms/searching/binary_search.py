@@ -1,9 +1,6 @@
 def recursive_binary_search(sorted_list, target):
-    # base case
     if len(sorted_list) == 0:
         return None
-
-    # divide conquer
     mid = len(sorted_list) // 2
     if sorted_list[mid] == target:
         return mid

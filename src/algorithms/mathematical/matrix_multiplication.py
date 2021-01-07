@@ -1,8 +1,3 @@
-"""
-Generate an n × 1 random 0/1 vector r.
-Compute P = A × (Br) – Cr.
-Return true if P = ( 0, 0, …, 0 )^T, return false otherwise.
-"""
 from random import randint
 
 
@@ -12,19 +7,15 @@ def multi(m, v):
 
 
 def freivald(a, b, c):
+    """
+    Freivalds' algorithm
+
+    Generate an n × 1 random 0/1 vector r.
+    Compute P = A × (Br) – Cr.
+    Return true if P = ( 0, 0, …, 0 )^T, return false otherwise.
+    """
     n = len(a)
     # generate random vector
     r = [randint(0, 1000000) for _ in range(n)]
     # abr=cr means ab=c
     return multi(a, multi(b, r)) == multi(c, r)
-
-
-def main():
-    a = [[1, 1], [1, 1]]
-    b = [[1, 1], [1, 1]]
-    c = [[2, 2], [2, 2]]
-    print(freivald(a, b, c))
-
-
-if __name__ == '__main__':
-    main()

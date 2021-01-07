@@ -2,14 +2,9 @@ from src.algorithms.sorting.helper import prompt
 
 
 def recursive_insertion_sort(collection, n):
-    # base case
     if n <= 1:
         return collection
-
-    # recursion call
     recursive_insertion_sort(collection, n - 1)
-
-    # collection[1:n-2] are sorted
     last = collection[n - 1]
     pos = n - 2
     while pos >= 0 and collection[pos] > last:

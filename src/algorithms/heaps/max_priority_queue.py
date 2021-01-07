@@ -15,11 +15,17 @@ class MaxPriorityQueue(object):
         build_max_heap(self.arr)
 
     def heap_maximum(self):
+        """
+        Returns the element of arr with the largest value.
+        """
         if self.heap_size < 1:
             return None
         return self.arr[0]
 
     def heap_extract_max(self):
+        """
+        Removes and returns the element of arr with the largest value.
+        """
         if self.heap_size < 1:
             return None
         max_val = self.arr[0]
@@ -29,8 +35,10 @@ class MaxPriorityQueue(object):
         return max_val
 
     def heap_increase_key(self, i, key) -> bool:
+        """
+        Increases the value of element at index i to the new value key.
+        """
         if key < self.arr[i]:
-            # new key is smaller than current key
             return False
         self.arr[i] = key
         while 0 < i and self.arr[parent(i)] < self.arr[i]:
@@ -39,6 +47,9 @@ class MaxPriorityQueue(object):
         return True
 
     def max_heap_insert(self, key):
+        """
+        Inserts one element with value key into the set.
+        """
         self.heap_size += 1
         self.arr[self.heap_size - 1] = -sys.maxsize
         self.heap_increase_key(self.heap_size - 1, key)

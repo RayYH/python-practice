@@ -1,4 +1,4 @@
-from src.algorithms.mathematical.freivald import freivald
+from src.algorithms.mathematical.matrix_multiplication import freivald
 
 
 def test_freivald():
@@ -12,3 +12,4 @@ def test_freivald():
     b = [[1, 2], [1, 0]]
     c = [[3, 4], [7, 8]]
     assert freivald(a, b, c)
+    assert not freivald(c, b, c)
