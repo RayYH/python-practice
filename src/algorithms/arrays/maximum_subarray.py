@@ -1,84 +1,109 @@
 """
-https://leetcode-cn.com/problems/maximum-subarray/
 https://leetcode.com/problems/maximum-subarray/
+
+Given an integer array nums, find the contiguous subarray
+(containing at least one number) which has the largest
+sum and return its sum.
 """
 import sys
 
 
 def find_max_crossing_sub_array(arr, low, mid, high):
-    left_sum = right_sum = 0 - sys.maxsize
-    max_left = mid
-    max_right = mid + 1
+    """
+    Returns a tuple containing the indices demarcating a maximum subarray
+    that crosses the midpoint, along with the sum of the values in a
+    maximum subarray.
+    """
+    l_sum = r_sum = - sys.maxsize - 1
+    l_best_index = mid
+    r_best_index = mid + 1
 
-    # arr[mid, mid-1, .. low]
+    # check the left part
     current_sum = 0
     for i in range(mid, low - 1, -1):
         current_sum += arr[i]
-        if current_sum > left_sum:
-            left_sum = current_sum
-            max_left = i
+        if current_sum > l_sum:
+            l_sum = current_sum
+            l_best_index = i
 
-    # arr[mid+1, mid+2, .. high]
+    # check the right part
     current_sum = 0
     for j in range(mid + 1, high + 1):
         current_sum += arr[j]
-        if current_sum > right_sum:
-            right_sum = current_sum
-            max_right = j
+        if current_sum > r_sum:
+            r_sum = current_sum
+            r_best_index = j
 
-    return max_left, max_right, left_sum + right_sum
+    return l_best_index, r_best_index, l_sum + r_sum
 
 
 def find_maximum_subarray(arr, low, high):
+    """
+    Find a maximum subarray crossing the midpoint in time linear in the size
+    of the subarray arr[low:high]
+    """
     if high == low:
+        # one element
         return low, high, arr[low]
     else:
         mid = (low + high) // 2
-        left_low, left_high, left_sum = find_maximum_subarray(arr, low, mid)
-        right_low, right_high, right_sum = find_maximum_subarray(
-            arr, mid + 1, high)
-        cross_low, cross_high, cross_sum = find_max_crossing_sub_array(
-            arr, low, mid, high)
-        if left_sum >= right_sum and left_sum >= cross_sum:
-            return left_low, left_high, left_sum
-        elif right_sum >= left_sum and right_sum >= cross_sum:
-            return right_low, right_high, right_sum
+        l_low, l_high, l_sum = find_maximum_subarray(arr, low, mid)
+        r_low, r_high, r_sum = find_maximum_subarray(arr, mid + 1, high)
+        c_low, c_high, c_sum = find_max_crossing_sub_array(arr, low, mid, high)
+        if l_sum >= r_sum and l_sum >= c_sum:
+            return l_low, l_high, l_sum
+        elif r_sum >= l_sum and r_sum >= c_sum:
+            return r_low, r_high, r_sum
         else:
-            return cross_low, cross_high, cross_sum
+            return c_low, c_high, c_sum
 
 
-def maximum_subarray_via_divide_and_conquer(arr):
+def divide_and_conquer_solution(arr):
     return find_maximum_subarray(arr, 0, len(arr) - 1)[2]
 
 
-# dp solution
-# a maximum subarray of A[1..j+1] is either a maximum subarray
-# of A[1..j] or a subarray A[1..j+1]
-def maximum_subarray(nums):
-    max_val = -sys.maxsize - 1
-    res = 0
+def kadane_algorithm_solution(nums):
+    """
+    Kadane's algorithm (DP solution)
+
+    Apparently, this is a optimization problem, which can be usually
+    solved by DP.
+
+    f(i): max sum of subarray which ends with nums[i]
+    f(0) = nums[0]
+    f(1) = max(f(0), 0) + nums[1]
+    ...
+    f(j+1) = max(f(j), 0) + nums[j+1]) -- 0 means f(j+1) = nums[j+1]
+    """
+    best_sum = -sys.maxsize - 1
+    current_sum = 0
     n = len(nums)
     for i in range(n):
-        res += nums[i]
-        if res > max_val:
-            max_val = res
+        current_sum += nums[i]
+        if current_sum > best_sum:
+            best_sum = current_sum
 
-        if res < 0:
-            res = 0
+        if current_sum < 0:
+            current_sum = 0
 
-    return max_val
+    return best_sum
 
 
-# Bruce Force
-def brute_force_solution(arr):
-    max_val = -sys.maxsize - 1
-    for i in range(0, len(arr)):
-        res = arr[i]
-        current_sum = arr[i]
-        for j in range(i + 1, len(arr)):
-            current_sum += arr[j]
-            if current_sum > res:
-                res = current_sum
-        if res > max_val:
-            max_val = res
-    return max_val
+def brute_force_solution(nums):
+    """
+    Brute-Force solution
+    """
+    ans = -sys.maxsize - 1
+    for i in range(0, len(nums)):
+        # max_val holds the max val of arr[i..k] where i must be included
+        # and k maybe i+1, i+2, i+3, ... len(arr)-1
+        max_val = nums[i]
+        # current_sum holds the current value of arr[i..j]
+        current_sum = nums[i]
+        for j in range(i + 1, len(nums)):
+            current_sum += nums[j]
+            if current_sum > max_val:
+                max_val = current_sum
+        if max_val > ans:
+            ans = max_val
+    return ans

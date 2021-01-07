@@ -3,7 +3,7 @@ def merge_inversions(arr, p, q, r):
     Merge sorted array arr[p:q] and arr[q:r] such that arr[p:r] is sorted
     """
     left, right = arr[p:q].copy(), arr[q:r].copy()
-    left_len, right_len = len(left), len(right)
+    len_left, len_right = len(left), len(right)
     # i - current index of left part
     # j - current index of right part
     i = j = 0
@@ -16,10 +16,10 @@ def merge_inversions(arr, p, q, r):
     # elements in the left array after 4 should be counted
     # because 6 > 5 > 4 > 1.
     counted = False
-    while i < left_len and j < right_len:
+    while i < len_left and j < len_right:
         # count inversions first, then move right pointer
         if not counted and right[j] < left[i]:
-            inversions_count += left_len - i
+            inversions_count += len_left - i
             counted = True
         # If left[i] <= right[j], there's no need to move i and no new
         # inversions occur, just skip, but if left[i] > right[j], new

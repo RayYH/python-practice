@@ -1,16 +1,16 @@
 from src.algorithms.arrays.maximum_subarray \
-    import maximum_subarray_via_divide_and_conquer, maximum_subarray, \
+    import divide_and_conquer_solution, kadane_algorithm_solution, \
     brute_force_solution
 import pytest
 
 
 def test_maximum_subarray_via_divide_and_conquer(case):
-    assert maximum_subarray_via_divide_and_conquer(case['nums']) == \
+    assert divide_and_conquer_solution(case['nums']) == \
            case['maximum']
 
 
 def test_maximum_subarray(case):
-    assert maximum_subarray(case['nums']) == case['maximum']
+    assert kadane_algorithm_solution(case['nums']) == case['maximum']
 
 
 def test_brute_force_solution(case):
