@@ -1,6 +1,6 @@
 import pytest
 from src.algorithms.sorting.helper import is_sorted, count_equals
-from src.algorithms.sorting.quick_sort import quick_sort
+from src.algorithms.sorting.quick_sort import quick_sort, quick_sort_part
 from src.algorithms.sorting.selection_sort import selection_sort
 from src.algorithms.sorting.insertion_sort import insertion_sort, \
     recursive_insertion_sort, insertion_sort_scanning_via_binary_search
@@ -17,6 +17,10 @@ def sorting_assert(arr, algorithm, *args):
 
 def test_quick_sort(unsorted):
     sorting_assert(unsorted, quick_sort)
+
+
+def test_quick_sort_part(unsorted):
+    sorting_assert(unsorted, quick_sort_part, 0, len(unsorted) - 1)
 
 
 def test_selection_sort(unsorted):
