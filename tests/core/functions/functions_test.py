@@ -113,8 +113,8 @@ def test_unpacking_argument_lists():
     assert list(range(*[3, 6])) == [3, 4, 5]
 
     def user(name, language='Chinese', number=1):
-        return '{} speaks {}, his favorite number is {}'.format(name, language,
-                                                                number)
+        return '{} speaks {}, his favorite number is {}'.format(
+            name, language, number)
 
     u = {'name': 'Ray', 'language': 'English', "number": 0}
     assert user(**u) == "Ray speaks English, his favorite number is 0"
