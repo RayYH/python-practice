@@ -14,7 +14,7 @@ def find_max_crossing_sub_array(arr, low, mid, high):
     that crosses the midpoint, along with the sum of the values in a
     maximum subarray.
     """
-    l_sum = r_sum = - sys.maxsize - 1
+    l_sum = r_sum = -sys.maxsize - 1
     l_best_index = mid
     r_best_index = mid + 1
 
