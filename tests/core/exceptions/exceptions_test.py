@@ -7,9 +7,6 @@ def test_some_operations_will_throw_exceptions():
     with pytest.raises(ZeroDivisionError):
         var = 10 * (1 / 0)
         assert var
-    with pytest.raises(NameError):
-        # noinspection PyUnresolvedReferences
-        4 + spam * 3
     with pytest.raises(TypeError):
         # noinspection PyTypeChecker
         var = '2' + 2
