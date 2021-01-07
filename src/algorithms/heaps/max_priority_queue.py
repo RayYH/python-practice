@@ -1,13 +1,18 @@
-from src.algorithms.sorting.heap_sort import max_heapify, parent, build_max_heap
+from src.algorithms.heaps.heaps import max_heapify, parent, build_max_heap
 from src.algorithms.sorting.heap_sort import swap
 import sys
 
 
 class MaxPriorityQueue(object):
+    """
+    A max-priority queue implementation.
+
+    Introduction to Algorithms section 6.5
+    """
+
     def __init__(self, arr):
         self.arr = arr
-        length = len(arr)
-        self.heap_size = length
+        self.heap_size = len(arr)
         build_max_heap(self.arr)
 
     def heap_maximum(self):
@@ -24,7 +29,7 @@ class MaxPriorityQueue(object):
         max_heapify(self.arr, self.heap_size, 0)
         return max_val
 
-    def heap_increase_key(self, i, key):
+    def heap_increase_key(self, i, key) -> bool:
         if key < self.arr[i]:
             # new key is smaller than current key
             return False
@@ -32,6 +37,7 @@ class MaxPriorityQueue(object):
         while 0 < i and self.arr[parent(i)] < self.arr[i]:
             swap(self.arr, i, parent(i))
             i = parent(i)
+        return True
 
     def max_heap_insert(self, key):
         self.heap_size += 1
