@@ -21,7 +21,6 @@ class InputError(IOError):
     expression -- input expression in which the error occurred
     message -- explanation of the error
     """
-
     def __init__(self, expression, message):
         self.expression = expression
         self.message = message
@@ -35,7 +34,6 @@ class TransitionError(RuntimeError):
         next -- attempted new state
         message -- explanation of why the specific transition is not allowed
     """
-
     def __init__(self, previous_state, next_state, message):
         self.previous_state = previous_state
         self.next_state = next_state
