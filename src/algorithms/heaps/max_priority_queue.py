@@ -1,14 +1,14 @@
+"""
+A max-priority queue implementation.
+
+Introduction to Algorithms section 6.5
+"""
 from src.algorithms.heaps.heaps import max_heapify, parent, build_max_heap
 from src.algorithms.sorting.heap_sort import swap
 import sys
 
 
 class MaxPriorityQueue(object):
-    """
-    A max-priority queue implementation.
-
-    Introduction to Algorithms section 6.5
-    """
     def __init__(self, arr):
         self.arr = arr
         self.heap_size = len(arr)

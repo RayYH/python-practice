@@ -1,4 +1,4 @@
-import os, pytest
+import os
 from src.helper.bash import run_bash
 
 
