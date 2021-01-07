@@ -9,7 +9,6 @@ class MaxPriorityQueue(object):
 
     Introduction to Algorithms section 6.5
     """
-
     def __init__(self, arr):
         self.arr = arr
         self.heap_size = len(arr)
