@@ -13,10 +13,10 @@ def is_sorted(collection: List):
                for i in range(len(collection) - 1))
 
 
-def prompt(sort_algorithm: Callable):
+def prompt(sort_algorithm: Callable, *args):
     user_input = input("Enter numbers separated by a comma(,):\n").strip()
     unsorted = [int(item) for item in user_input.split(",")]
-    print(sort_algorithm(unsorted))
+    print(sort_algorithm(unsorted, *args))
 
 
 def swap(collection: List, a, b):
