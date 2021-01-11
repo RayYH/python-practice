@@ -3,17 +3,26 @@
 import sys
 import os
 import tty
-import termios
+
+
+def is_posix():
+    try:
+        import posix
+        return True
+    except ImportError:
+        return False
 
 
 def get_char():
-    fd = sys.stdin.fileno()
-    old = termios.tcgetattr(fd)
-    try:
-        tty.setraw(fd)
-        return sys.stdin.read(1)
-    finally:
-        termios.tcsetattr(fd, termios.TCSADRAIN, old)
+    if is_posix():
+        import termios
+        fd = sys.stdin.fileno()
+        old = termios.tcgetattr(fd)
+        try:
+            tty.setraw(fd)
+            return sys.stdin.read(1)
+        finally:
+            termios.tcsetattr(fd, termios.TCSADRAIN, old)
 
 
 def evaluate(commands):
@@ -128,6 +137,9 @@ def build_brace_map(code):
 
 
 def main():
+    if not is_posix():
+        print("only run on platforms supports POSIX standard")
+        sys.exit()
     if len(sys.argv) == 2:
         run(sys.argv[1])
     else:
