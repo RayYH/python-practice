@@ -72,3 +72,60 @@ def test_dynamically_add_attrs():
 def test_complex_number_instance_methods():
     cn = ComplexNumber(2, 3)
     assert cn.to_string() == "2 + 3j"
+
+
+class Parrot:
+    # class attribute
+    species = "bird"
+
+    # instance attribute
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # instance method
+    def sing(self, song):
+        return "{} sings {}".format(self.name, song)
+
+    # instance method
+    def dance(self):
+        return "{} is now dancing".format(self.name)
+
+    @staticmethod
+    def greet():
+        return 'hello'
+
+
+def test_class_macro():
+    blu = Parrot("Blu", 10)
+    woo = Parrot("Woo", 15)
+    assert blu.__class__ == woo.__class__ == Parrot
+
+
+def test_parrot_class_attributes():
+    blu = Parrot("Blu", 10)
+    woo = Parrot("Woo", 15)
+    assert blu.species == 'bird'
+    assert woo.species == 'bird'
+    assert Parrot.species == 'bird'
+
+
+def test_parrot_instance_attributes():
+    blu = Parrot("Blu", 10)
+    woo = Parrot("Woo", 15)
+    assert blu.name == 'Blu'
+    assert blu.age == 10
+    assert woo.name == 'Woo'
+    assert woo.age == 15
+
+
+def test_parrot_instance_methods():
+    blu = Parrot("Blu", 10)
+    assert blu.sing("'Happy'") == "Blu sings 'Happy'"
+    assert blu.dance() == "Blu is now dancing"
+
+
+def test_parrot_static_methods():
+    blu = Parrot("Blu", 10)
+    woo = Parrot("Woo", 15)
+    assert blu.greet() == woo.greet() == Parrot.greet()
