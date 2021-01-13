@@ -3,7 +3,6 @@ def create(x, y):
     x: simple number
     y: a dictionary
     """
-
     def set_x(new_x):
         nonlocal x
         x = new_x

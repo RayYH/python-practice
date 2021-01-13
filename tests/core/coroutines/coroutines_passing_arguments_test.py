@@ -9,7 +9,7 @@ def filter_line(num):
 
 
 def test_filter_line():
-    with captured_output() as(out, err):
+    with captured_output() as (out, err):
         cor = filter_line("33")
         next(cor)
         cor.send("Jessica, age:24")

@@ -16,7 +16,7 @@ def bare_bones():
 
 
 def test_bare_bones():
-    with captured_output() as(out, err):
+    with captured_output() as (out, err):
         coroutine = bare_bones()
         # coroutines require the next() method to be called first
         next(coroutine)
