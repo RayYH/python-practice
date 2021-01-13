@@ -1,6 +1,3 @@
-TEST_FILE_RELATIVE_PATH = "/tmp/pytest.txt"
-
-
 class File(object):
     def __init__(self, filename, mode):
         self.file_obj = open(filename, mode)
@@ -12,8 +9,7 @@ class File(object):
         self.file_obj.close()
 
 
-def test_file():
-    with open(TEST_FILE_RELATIVE_PATH, "w") as f:
-        assert f
-    with File(TEST_FILE_RELATIVE_PATH, mode='r') as file_handler:
-        assert file_handler
+def test_with_statements():
+    tmp_file = "/tmp/pytest.txt"
+    with File(tmp_file, mode='r') as opened_file:
+        assert opened_file
