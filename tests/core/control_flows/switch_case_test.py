@@ -1,4 +1,17 @@
-from src.core.control_flows.switch_case import switched, switched_with_defaults
+"""
+Python does not support switch-case statement,
+but we can use a function to make it.
+"""
+
+
+def switched(option, choices):
+    # in case option does dot exists
+    # we use get() instead of [] syntax
+    return choices.get(option)
+
+
+def switched_with_defaults(option, choices, default):
+    return choices.get(option, default)
 
 
 def test_switch_case():

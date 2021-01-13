@@ -1,6 +1,39 @@
-from src.core.control_flows.if_statement \
-    import greater_than_3, greater_than_5, equals
 from random import randint
+
+
+# if
+def greater_than_3(number):
+    if number > 3:
+        return True
+    return False
+
+
+# if-else
+def greater_than_5(number):
+    if number > 5:
+        return True
+    else:
+        return False
+
+
+# if-elif-else
+def equals(a, b):
+    if a > b:
+        return 1
+    elif a == b:
+        return 0
+    else:
+        return -1
+
+
+def compare_to_zero(number):
+    if number >= 0:
+        if number == 0:
+            return 0
+        else:
+            return 1
+    else:
+        return -1
 
 
 def test_greater_than_3():

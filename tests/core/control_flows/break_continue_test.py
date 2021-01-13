@@ -1,12 +1,24 @@
 from src.helper.ioh import captured_output, to_string
-from src.core.control_flows.break_continue_statement \
-    import break_usage, continue_usage
+
+
+def break_usage():
+    for letter in "string":
+        if letter == "i":
+            break
+        print(letter, sep="", end="")
 
 
 def test_break_usage():
     with captured_output() as (out, err):
         break_usage()
     assert to_string(out) == "str"
+
+
+def continue_usage():
+    for letter in "string":
+        if letter == "r":
+            continue
+        print(letter, sep="", end="")
 
 
 def test_continue_usage():
