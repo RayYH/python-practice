@@ -95,7 +95,7 @@ def normalize(commands):
 def run(scripts):
     if os.path.isfile(scripts):
         with open(scripts, mode="r", encoding="utf-8") as f:
-            scripts = f.readlines()[0]
+            scripts = f.read()
     evaluate(scripts)
 
 
