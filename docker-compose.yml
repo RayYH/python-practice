@@ -1,0 +1,10 @@
+version: '3'
+services:
+  python_practice:
+    image: python:3-alpine
+    container_name: python-practice
+    volumes:
+      - .:/code
+    working_dir: /code
+    tty: true
+    stdin_open: true
