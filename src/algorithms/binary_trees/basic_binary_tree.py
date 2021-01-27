@@ -5,7 +5,6 @@ class Node:
     """
     A Node has data variable and pointers to Nodes to its left and right.
     """
-
     def __init__(self, data: int) -> None:
         self.data = data
         self.left: Optional[Node] = None
@@ -31,8 +30,8 @@ def depth_of_tree(tree: Optional[Node]) -> int:
     The height of a tree would be the height of its root node, or equivalently,
     the depth of its deepest node.
     """
-    return 1 + max(depth_of_tree(tree.left),
-                   depth_of_tree(tree.right)) if tree else 0
+    return 1 + max(depth_of_tree(tree.left), depth_of_tree(
+        tree.right)) if tree else 0
 
 
 def is_full_binary_tree(tree: Optional[Node]) -> bool:
