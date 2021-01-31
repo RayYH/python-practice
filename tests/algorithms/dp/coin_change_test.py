@@ -48,9 +48,21 @@ def m_c_case(request):
 
 
 @pytest.fixture(params=[
-    {'coins': {1, 2, 5}, 'amount': 5, 'ans': 4},
-    {'coins': {2}, 'amount': 3, 'ans': 0},
-    {'coins': {10}, 'amount': 10, 'ans': 1},
+    {
+        'coins': {1, 2, 5},
+        'amount': 5,
+        'ans': 4
+    },
+    {
+        'coins': {2},
+        'amount': 3,
+        'ans': 0
+    },
+    {
+        'coins': {10},
+        'amount': 10,
+        'ans': 1
+    },
 ])
 def t_c_case(request):
     yield request.param
