@@ -11,11 +11,31 @@ def test_minimum_coins(case):
 
 
 @pytest.fixture(params=[
-    {'coins': {1, 2, 5}, 'amount': 11, 'ans': 3},
-    {'coins': {1, 2, 5}, 'amount': 10, 'ans': 2},
-    {'coins': {1, 2, 5}, 'amount': 30, 'ans': 6},
-    {'coins': {1, 2, 5}, 'amount': -1, 'ans': -1},
-    {'coins': {7, 8, 9}, 'amount': 4, 'ans': -1},
+    {
+        'coins': {1, 2, 5},
+        'amount': 11,
+        'ans': 3
+    },
+    {
+        'coins': {1, 2, 5},
+        'amount': 10,
+        'ans': 2
+    },
+    {
+        'coins': {1, 2, 5},
+        'amount': 30,
+        'ans': 6
+    },
+    {
+        'coins': {1, 2, 5},
+        'amount': -1,
+        'ans': -1
+    },
+    {
+        'coins': {7, 8, 9},
+        'amount': 4,
+        'ans': -1
+    },
 ])
 def case(request):
     yield request.param
