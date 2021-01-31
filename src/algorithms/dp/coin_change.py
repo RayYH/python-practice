@@ -26,14 +26,14 @@ def minimum_coins_memo(coins: Set[int], amount: int, memo: Dict) -> int:
     if amount in memo:
         return memo.get(amount)
 
-    # base case and condition check
+    # base case and param validation
     if amount == 0:
         return 0
 
     if amount <= 0:
         return -1
 
-    # recursive
+    # recursive strategy using formula
     res = sys.maxsize
     for coin in coins:
         sub_ans = minimum_coins_memo(coins, amount - coin, memo)
@@ -68,3 +68,22 @@ def minimum_coins_tabulation(coins: Set[int], amount: int) -> int:
 
     # return stored value in tables (no solution when initial value not changed)
     return tables[amount] if tables[amount] != sys.maxsize else -1
+
+
+def total_combinations_tabulation(coins: Set[int], amount: int) -> int:
+    # param validation
+    if amount < 0:
+        return 0
+
+    # init tables
+    tables = [0] * (amount + 1)
+
+    # base case
+    tables[0] = 1
+
+    # update tables using formula
+    for coin in coins:
+        for i in range(coin, amount + 1):
+            tables[i] += tables[i - coin]
+    # return solution stored inside tables
+    return tables[amount]
